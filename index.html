@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milon Studio — Apps that ship in two weeks.</title>
-<meta name="description" content="Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store in two weeks, for $99 a month.">
+<meta name="description" content="Custom mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you own, and compete with the chains.">
  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,7 +170,7 @@ header { padding: 32px 0 0; }
   letter-spacing: -0.03em;
   color: var(--ink);
   margin-bottom: 40px;
-  max-width: 12ch;
+  max-width: 14ch;
 }
  
 .hero h1 .accent {
@@ -190,48 +190,63 @@ header { padding: 32px 0 0; }
   margin-bottom: 56px;
 }
  
-.hero-stats {
+/* STATS — now the centerpiece of the hero */
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border-top: 0.5px solid var(--rule);
   border-bottom: 0.5px solid var(--rule);
-  padding: 24px 0;
+  padding: 32px 0;
 }
  
-.hero-stat {
-  padding: 0 24px;
+.stat {
+  padding: 0 32px;
   border-right: 0.5px solid var(--rule);
 }
  
-.hero-stat:last-child { border-right: none; }
-.hero-stat:first-child { padding-left: 0; }
+.stat:last-child { border-right: none; }
+.stat:first-child { padding-left: 0; }
  
-.hero-stat-label {
+.stat-value {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+ 
+.stat-value .unit {
+  font-family: 'Instrument Serif', serif;
+  font-size: 0.5em;
+  font-style: italic;
+  color: var(--copper);
+  font-weight: 400;
+  margin-left: 4px;
+}
+ 
+.stat-label {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 8px;
+  max-width: 28ch;
+}
+ 
+.stat-source {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 8px;
-}
- 
-.hero-stat-value {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 96;
-  color: var(--ink);
-  line-height: 1;
-}
- 
-.hero-stat-value .small {
-  font-size: 16px;
   color: var(--ink-soft);
 }
  
 .content-section {
-  padding: 80px 0;
+  padding: 96px 0;
   border-bottom: 0.5px solid var(--rule);
 }
  
@@ -263,14 +278,14 @@ header { padding: 32px 0 0; }
  
 .section-content h2 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(36px, 4.5vw, 52px);
+  font-size: clamp(34px, 4.5vw, 48px);
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 24px;
-  max-width: 18ch;
+  margin-bottom: 28px;
+  max-width: 20ch;
 }
  
 .section-content h2 em {
@@ -284,70 +299,85 @@ header { padding: 32px 0 0; }
   font-size: 19px;
   font-weight: 400;
   font-variation-settings: 'opsz' 14, 'SOFT' 30;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink);
   max-width: 58ch;
 }
  
 .section-content p + p { margin-top: 16px; }
  
-.pricing-card {
-  margin-top: 32px;
-  padding: 32px;
-  background: var(--paper-deep);
-  border: 0.5px solid var(--rule);
-  border-left: 3px solid var(--copper);
-  max-width: 480px;
+/* Inline feature highlights */
+.feature-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+  max-width: 640px;
 }
  
-.pricing-price {
+.feature {
+  border-top: 0.5px solid var(--rule);
+  padding-top: 20px;
+}
+ 
+.feature-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+ 
+.feature h3 {
   font-family: 'Fraunces', serif;
-  font-size: 56px;
+  font-size: 22px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+ 
+.feature p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+ 
+/* Inline stat callout */
+.stat-callout {
+  margin: 32px 0 0;
+  padding: 24px 28px;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--copper);
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 560px;
+}
+ 
+.stat-callout-value {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   line-height: 1;
-  color: var(--ink);
+  color: var(--copper);
   letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
  
-.pricing-price .currency {
-  font-size: 32px;
-  vertical-align: super;
-  margin-right: 2px;
-  color: var(--copper);
-}
- 
-.pricing-price .period {
+.stat-callout-text {
   font-family: 'Instrument Serif', serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--ink-soft);
-  margin-left: 8px;
+  font-size: 18px;
   font-style: italic;
-}
- 
-.pricing-includes {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-}
- 
-.pricing-includes span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
- 
-.pricing-includes span::before {
-  content: '+';
-  color: var(--copper);
-  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink);
+  flex: 1;
+  min-width: 200px;
 }
  
 .founder {
@@ -516,15 +546,17 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   .hero-eyebrow { margin-bottom: 24px; }
   .hero h1 { margin-bottom: 28px; max-width: none; }
   .hero-lede { margin-bottom: 40px; }
-  .hero-stats { grid-template-columns: 1fr; gap: 16px; }
-  .hero-stat { padding: 12px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
-  .hero-stat:last-child { border-bottom: none; }
-  .hero-stat:first-child { padding-top: 4px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .stat { padding: 24px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
+  .stat:last-child { border-bottom: none; }
+  .stat:first-child { padding-top: 24px; }
+  .stat-value { font-size: 44px; }
   .section-grid { grid-template-columns: 1fr; gap: 24px; }
   .section-number { padding-top: 0; }
   .content-section { padding: 64px 0; }
-  .pricing-card { padding: 24px; }
-  .pricing-price { font-size: 44px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stat-callout { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .stat-callout-value { font-size: 36px; }
   .founder { padding: 64px 0 48px; }
   .founder-quote { font-size: 28px; }
   .cta-section { padding: 80px 0; }
@@ -554,21 +586,24 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   <section class="hero">
     <div class="container">
       <div class="hero-eyebrow">An app studio for small businesses</div>
-      <h1>Apps that ship in <span class="accent">two&nbsp;weeks.</span></h1>
-      <p class="hero-lede">Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store, on time, on budget.</p>
+      <h1>Your shop deserves an app of its <span class="accent">own.</span></h1>
+      <p class="hero-lede">Mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you actually own, and compete with the chains — without the chain-store price tag.</p>
  
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-label">Time to launch</div>
-          <div class="hero-stat-value">14 <span class="small">days</span></div>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-value">67<span class="unit">%</span></div>
+          <div class="stat-label">More repeat visits from app-using customers vs. non-app customers</div>
+          <div class="stat-source">Bond Loyalty Report</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Monthly cost</div>
-          <div class="hero-stat-value">$99</div>
+        <div class="stat">
+          <div class="stat-value">3.5<span class="unit">×</span></div>
+          <div class="stat-label">Higher engagement on push notifications than email marketing</div>
+          <div class="stat-source">Localytics</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Setup fee</div>
-          <div class="hero-stat-value">$0</div>
+        <div class="stat">
+          <div class="stat-value">82<span class="unit">%</span></div>
+          <div class="stat-label">Of consumers prefer shopping at businesses that have a mobile app</div>
+          <div class="stat-source">Statista, 2024</div>
         </div>
       </div>
     </div>
@@ -579,11 +614,12 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       <div class="section-grid">
         <div class="section-number">
           <span class="num">01</span>
-          What we build
+          The problem
         </div>
         <div class="section-content">
-          <h2>A real app. <em>Yours.</em></h2>
-          <p>iOS and Android, branded to you. Mobile ordering, loyalty rewards, push notifications, customer database — bundled, ready to go. No template that twenty other shops are using. No six-month build cycle. Just the app your customers will actually use.</p>
+          <h2>The chains have apps. <em>You don't.</em></h2>
+          <p>Every Starbucks regular has the Starbucks app. Every Sweetgreen customer has the Sweetgreen app. They open it, tap their order, walk in, pick it up. Their loyalty points pile up. They come back more often, spend more per visit, and never have to remember a phone number.</p>
+          <p>Independent shops have been locked out of this — not because the technology is hard, but because building a real app has cost six figures and six months. Until now.</p>
         </div>
       </div>
     </div>
@@ -594,12 +630,34 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       <div class="section-grid">
         <div class="section-number">
           <span class="num">02</span>
-          How it works
+          What it does
         </div>
         <div class="section-content">
-          <h2>Two weeks, <em>three steps.</em></h2>
-          <p>Week one we capture your brand, your menu, your offers. Week two we build, test, and submit to the App Store. Day fifteen your customers download it.</p>
-          <p>We handle the App Store review, the hosting, the updates — all of it. You keep running the shop.</p>
+          <h2>A real app. <em>Yours.</em></h2>
+          <p>iOS and Android, branded entirely to your shop. Your colors, your menu, your logo on every customer's home screen. Not a white-label template that twenty other shops are using — yours.</p>
+ 
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-label">Loyalty</div>
+              <h3>Stars, points, free drinks.</h3>
+              <p>Reward regulars automatically. No punch cards to lose, no phone numbers to type. Customers earn just by ordering.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-label">Mobile ordering</div>
+              <h3>Skip the line.</h3>
+              <p>Order ahead, pay in-app, pick up at the counter. Frictionless for them, faster throughput for you.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-label">Push notifications</div>
+              <h3>Reach customers directly.</h3>
+              <p>New seasonal drink? Rainy-day promo? Send a notification. No Instagram algorithm in the way.</p>
+            </div>
+            <div class="feature">
+              <div class="feature-label">Customer list</div>
+              <h3>The data is yours.</h3>
+              <p>Names, emails, order history, preferences — owned by you, not by a third-party platform that could change the rules tomorrow.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -610,24 +668,34 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       <div class="section-grid">
         <div class="section-number">
           <span class="num">03</span>
-          What it costs
+          Why it works
         </div>
         <div class="section-content">
-          <h2>$99 a month. <em>That's it.</em></h2>
-          <p>No setup fee, no contracts, cancel anytime. The math: a loyalty app pays for itself when ten regulars visit one extra time per month.</p>
+          <h2>Regulars buy more, <em>more often.</em></h2>
+          <p>The math is simple. A loyalty member visits more often than a one-time customer. They spend more per visit. They tell their friends. An app on their phone makes them a member without the friction of a paper punch card or a "what's your phone number" awkward exchange at the register.</p>
  
-          <div class="pricing-card">
-            <div class="pricing-price">
-              <span class="currency">$</span>99<span class="period">/ month</span>
-            </div>
-            <div class="pricing-includes">
-              <span>Hosting</span>
-              <span>App Store fees</span>
-              <span>Updates</span>
-              <span>Direct support</span>
-              <span>Cancel anytime</span>
-            </div>
+          <div class="stat-callout">
+            <div class="stat-callout-value">+20%</div>
+            <div class="stat-callout-text">Average increase in revenue from a well-implemented loyalty program, across food &amp; retail</div>
           </div>
+ 
+          <p style="margin-top: 24px;">Multiply that across a year of regulars and the app becomes one of the highest-ROI investments a small shop can make. The technology is the easy part. The hard part — knowing what to build and what to leave out — is what we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="content-section">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-number">
+          <span class="num">04</span>
+          How we work
+        </div>
+        <div class="section-content">
+          <h2>Two weeks, <em>not two quarters.</em></h2>
+          <p>Week one we capture your brand, your menu, your offers, your voice. Week two we build, test, and submit to the App Store.</p>
+          <p>Day fifteen your customers download it. We handle the App Store review, the hosting, the updates, the bug fixes — all of it. You keep running the shop.</p>
         </div>
       </div>
     </div>
@@ -638,8 +706,8 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       <p class="founder-quote">Indie shops deserve the same software the chains use — without the price tag or the six-month build.</p>
  
       <div class="founder-body">
-        <p>I started Milon Studio because every "small business app" I'd seen was either a glorified passport stamp or a six-month consulting engagement priced for venture capital.</p>
-        <p>I work with one shop at a time, and you'll deal with me directly from kickoff to launch. If your shop is on a block I'd walk down on a Saturday, you're who I built this for.</p>
+        <p>We started Milon Studio because every "small business app" we'd seen was either a glorified punch card or a six-month consulting engagement priced for venture capital.</p>
+        <p>We work with one shop at a time, and you'll deal with the team directly from kickoff to launch. If your shop is on a block we'd walk down on a Saturday, you're who we built this for.</p>
       </div>
  
       <div class="founder-sig">— The Milon Studio team</div>
