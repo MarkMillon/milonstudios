@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milon Studio — Apps that ship in two weeks.</title>
-<meta name="description" content="Custom mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you own, and compete with the chains.">
- 
+<meta name="description" content="Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store in two weeks, for $99 a month.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
- 
+
 <style>
 :root {
   --copper: #C97B3D;
@@ -21,13 +21,13 @@
   --pine: #2D4A3E;
   --rule: rgba(31, 27, 22, 0.12);
 }
- 
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
 ::selection { background: var(--copper); color: var(--paper); }
- 
+
 html { scroll-behavior: smooth; }
- 
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -42,7 +42,7 @@ body {
     radial-gradient(circle at 25% 20%, rgba(201, 123, 61, 0.04) 0%, transparent 50%),
     radial-gradient(circle at 75% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%);
 }
- 
+
 body::before {
   content: '';
   position: fixed;
@@ -52,29 +52,29 @@ body::before {
   z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
- 
+
 main, header, footer { position: relative; z-index: 1; }
- 
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 32px;
 }
- 
+
 .container-narrow {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 32px;
 }
- 
+
 header { padding: 32px 0 0; }
- 
+
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
- 
+
 .wordmark {
   display: inline-flex;
   align-items: baseline;
@@ -82,7 +82,7 @@ header { padding: 32px 0 0; }
   color: var(--ink);
   gap: 2px;
 }
- 
+
 .wm-m {
   font-family: 'Fraunces', serif;
   font-size: 38px;
@@ -91,7 +91,7 @@ header { padding: 32px 0 0; }
   color: var(--copper);
   line-height: 1;
 }
- 
+
 .wm-rest {
   font-family: 'Fraunces', serif;
   font-size: 28px;
@@ -100,7 +100,7 @@ header { padding: 32px 0 0; }
   color: var(--ink);
   line-height: 1;
 }
- 
+
 .wm-suffix {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
@@ -114,7 +114,7 @@ header { padding: 32px 0 0; }
   align-self: center;
   padding-top: 2px;
 }
- 
+
 .header-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -122,7 +122,7 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
   text-transform: uppercase;
 }
- 
+
 .header-meta .dot {
   display: inline-block;
   width: 6px;
@@ -133,14 +133,14 @@ header { padding: 32px 0 0; }
   vertical-align: middle;
   animation: pulse 2s ease-in-out infinite;
 }
- 
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
- 
+
 .hero { padding: 96px 0 80px; position: relative; }
- 
+
 .hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -152,7 +152,7 @@ header { padding: 32px 0 0; }
   align-items: center;
   gap: 12px;
 }
- 
+
 .hero-eyebrow::before {
   content: '';
   display: inline-block;
@@ -160,7 +160,7 @@ header { padding: 32px 0 0; }
   height: 0.5px;
   background: var(--copper);
 }
- 
+
 .hero h1 {
   font-family: 'Fraunces', serif;
   font-size: clamp(56px, 9vw, 112px);
@@ -170,16 +170,16 @@ header { padding: 32px 0 0; }
   letter-spacing: -0.03em;
   color: var(--ink);
   margin-bottom: 40px;
-  max-width: 14ch;
+  max-width: 12ch;
 }
- 
+
 .hero h1 .accent {
   font-style: italic;
   font-weight: 400;
   color: var(--copper);
   font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
 }
- 
+
 .hero-lede {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: clamp(22px, 2.5vw, 28px);
@@ -189,74 +189,59 @@ header { padding: 32px 0 0; }
   max-width: 36ch;
   margin-bottom: 56px;
 }
- 
-/* STATS — now the centerpiece of the hero */
-.stats-grid {
+
+.hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border-top: 0.5px solid var(--rule);
   border-bottom: 0.5px solid var(--rule);
-  padding: 32px 0;
+  padding: 24px 0;
 }
- 
-.stat {
-  padding: 0 32px;
+
+.hero-stat {
+  padding: 0 24px;
   border-right: 0.5px solid var(--rule);
 }
- 
-.stat:last-child { border-right: none; }
-.stat:first-child { padding-left: 0; }
- 
-.stat-value {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5vw, 56px);
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
- 
-.stat-value .unit {
-  font-family: 'Instrument Serif', serif;
-  font-size: 0.5em;
-  font-style: italic;
-  color: var(--copper);
-  font-weight: 400;
-  margin-left: 4px;
-}
- 
-.stat-label {
-  font-family: 'Fraunces', serif;
-  font-size: 15px;
-  line-height: 1.4;
-  color: var(--ink);
-  margin-bottom: 8px;
-  max-width: 28ch;
-}
- 
-.stat-source {
+
+.hero-stat:last-child { border-right: none; }
+.hero-stat:first-child { padding-left: 0; }
+
+.hero-stat-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-soft);
+  margin-bottom: 8px;
 }
- 
+
+.hero-stat-value {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.hero-stat-value .small {
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
 .content-section {
-  padding: 96px 0;
+  padding: 80px 0;
   border-bottom: 0.5px solid var(--rule);
 }
- 
+
 .section-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 64px;
   align-items: start;
 }
- 
+
 .section-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -268,124 +253,109 @@ header { padding: 32px 0 0; }
   flex-direction: column;
   gap: 6px;
 }
- 
+
 .section-number .num {
   font-family: 'Fraunces', serif;
   font-size: 14px;
   color: var(--ink-soft);
   letter-spacing: 0;
 }
- 
+
 .section-content h2 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(34px, 4.5vw, 48px);
+  font-size: clamp(36px, 4.5vw, 52px);
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 28px;
-  max-width: 20ch;
+  margin-bottom: 24px;
+  max-width: 18ch;
 }
- 
+
 .section-content h2 em {
   font-style: italic;
   color: var(--copper);
   font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
 }
- 
+
 .section-content p {
   font-family: 'Fraunces', serif;
   font-size: 19px;
   font-weight: 400;
   font-variation-settings: 'opsz' 14, 'SOFT' 30;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--ink);
   max-width: 58ch;
 }
- 
+
 .section-content p + p { margin-top: 16px; }
- 
-/* Inline feature highlights */
-.feature-grid {
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 48px;
-  max-width: 640px;
-}
- 
-.feature {
-  border-top: 0.5px solid var(--rule);
-  padding-top: 20px;
-}
- 
-.feature-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 8px;
-}
- 
-.feature h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 96, 'SOFT' 50;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
- 
-.feature p {
-  font-family: 'Fraunces', serif;
-  font-size: 16px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-}
- 
-/* Inline stat callout */
-.stat-callout {
-  margin: 32px 0 0;
-  padding: 24px 28px;
+
+.pricing-card {
+  margin-top: 32px;
+  padding: 32px;
   background: var(--paper-deep);
+  border: 0.5px solid var(--rule);
   border-left: 3px solid var(--copper);
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 560px;
+  max-width: 480px;
 }
- 
-.stat-callout-value {
+
+.pricing-price {
   font-family: 'Fraunces', serif;
-  font-size: 40px;
+  font-size: 56px;
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   line-height: 1;
-  color: var(--copper);
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
-}
- 
-.stat-callout-text {
-  font-family: 'Instrument Serif', serif;
-  font-size: 18px;
-  font-style: italic;
-  line-height: 1.4;
   color: var(--ink);
-  flex: 1;
-  min-width: 200px;
+  letter-spacing: -0.02em;
 }
- 
+
+.pricing-price .currency {
+  font-size: 32px;
+  vertical-align: super;
+  margin-right: 2px;
+  color: var(--copper);
+}
+
+.pricing-price .period {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-left: 8px;
+  font-style: italic;
+}
+
+.pricing-includes {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.pricing-includes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pricing-includes span::before {
+  content: '+';
+  color: var(--copper);
+  font-weight: 500;
+}
+
 .founder {
   padding: 96px 0 64px;
   background: var(--paper-deep);
   border-bottom: 0.5px solid var(--rule);
 }
- 
+
 .founder-quote {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: clamp(26px, 3.5vw, 38px);
@@ -396,7 +366,7 @@ header { padding: 32px 0 0; }
   font-style: italic;
   position: relative;
 }
- 
+
 .founder-quote::before {
   content: '"';
   position: absolute;
@@ -407,9 +377,9 @@ header { padding: 32px 0 0; }
   line-height: 1;
   font-family: 'Fraunces', serif;
 }
- 
+
 .founder-body { margin-top: 40px; max-width: 56ch; }
- 
+
 .founder-body p {
   font-family: 'Fraunces', serif;
   font-size: 18px;
@@ -417,9 +387,9 @@ header { padding: 32px 0 0; }
   line-height: 1.6;
   color: var(--ink);
 }
- 
+
 .founder-body p + p { margin-top: 14px; }
- 
+
 .founder-sig {
   margin-top: 32px;
   font-family: 'Instrument Serif', serif;
@@ -427,13 +397,13 @@ header { padding: 32px 0 0; }
   font-size: 22px;
   color: var(--copper);
 }
- 
+
 .cta-section {
   padding: 120px 0;
   text-align: center;
   position: relative;
 }
- 
+
 .cta-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -442,7 +412,7 @@ header { padding: 32px 0 0; }
   color: var(--copper);
   margin-bottom: 24px;
 }
- 
+
 .cta-headline {
   font-family: 'Fraunces', serif;
   font-size: clamp(40px, 5.5vw, 64px);
@@ -456,13 +426,13 @@ header { padding: 32px 0 0; }
   margin-left: auto;
   margin-right: auto;
 }
- 
+
 .cta-headline em {
   font-style: italic;
   color: var(--copper);
   font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
 }
- 
+
 .cta-sub {
   font-family: 'Instrument Serif', serif;
   font-size: 20px;
@@ -470,7 +440,7 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
   margin-bottom: 48px;
 }
- 
+
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -488,17 +458,17 @@ header { padding: 32px 0 0; }
   cursor: pointer;
   position: relative;
 }
- 
+
 .cta-button::after {
   content: '→';
   display: inline-block;
   transition: transform 0.2s ease;
   font-size: 22px;
 }
- 
+
 .cta-button:hover { background: var(--copper); }
 .cta-button:hover::after { transform: translateX(4px); }
- 
+
 .cta-detail {
   margin-top: 28px;
   font-family: 'JetBrains Mono', monospace;
@@ -507,13 +477,13 @@ header { padding: 32px 0 0; }
   text-transform: uppercase;
   color: var(--ink-soft);
 }
- 
+
 footer {
   padding: 48px 0;
   border-top: 0.5px solid var(--rule);
   background: var(--paper-deep);
 }
- 
+
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -525,18 +495,18 @@ footer {
   color: var(--ink-soft);
   text-transform: uppercase;
 }
- 
+
 footer a {
   color: var(--ink-soft);
   text-decoration: none;
   border-bottom: 0.5px solid var(--rule);
   transition: color 0.15s ease, border-color 0.15s ease;
 }
- 
+
 footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
- 
+
 .footer-right { text-align: right; }
- 
+
 @media (max-width: 720px) {
   .container, .container-narrow { padding: 0 24px; }
   header { padding: 24px 0 0; }
@@ -546,17 +516,15 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   .hero-eyebrow { margin-bottom: 24px; }
   .hero h1 { margin-bottom: 28px; max-width: none; }
   .hero-lede { margin-bottom: 40px; }
-  .stats-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
-  .stat { padding: 24px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
-  .stat:last-child { border-bottom: none; }
-  .stat:first-child { padding-top: 24px; }
-  .stat-value { font-size: 44px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 16px; }
+  .hero-stat { padding: 12px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
+  .hero-stat:last-child { border-bottom: none; }
+  .hero-stat:first-child { padding-top: 4px; }
   .section-grid { grid-template-columns: 1fr; gap: 24px; }
   .section-number { padding-top: 0; }
   .content-section { padding: 64px 0; }
-  .feature-grid { grid-template-columns: 1fr; gap: 24px; }
-  .stat-callout { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .stat-callout-value { font-size: 36px; }
+  .pricing-card { padding: 24px; }
+  .pricing-price { font-size: 44px; }
   .founder { padding: 64px 0 48px; }
   .founder-quote { font-size: 28px; }
   .cta-section { padding: 80px 0; }
@@ -567,7 +535,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="container">
     <div class="header-inner">
@@ -581,139 +549,103 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
     </div>
   </div>
 </header>
- 
+
 <main>
   <section class="hero">
     <div class="container">
       <div class="hero-eyebrow">An app studio for small businesses</div>
-      <h1>Your shop deserves an app of its <span class="accent">own.</span></h1>
-      <p class="hero-lede">Mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you actually own, and compete with the chains — without the chain-store price tag.</p>
- 
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value">67<span class="unit">%</span></div>
-          <div class="stat-label">More repeat visits from app-using customers vs. non-app customers</div>
-          <div class="stat-source">Bond Loyalty Report</div>
+      <h1>Apps that ship in <span class="accent">two&nbsp;weeks.</span></h1>
+      <p class="hero-lede">Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store, on time, on budget.</p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-label">Time to launch</div>
+          <div class="hero-stat-value">14 <span class="small">days</span></div>
         </div>
-        <div class="stat">
-          <div class="stat-value">3.5<span class="unit">×</span></div>
-          <div class="stat-label">Higher engagement on push notifications than email marketing</div>
-          <div class="stat-source">Localytics</div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Monthly cost</div>
+          <div class="hero-stat-value">$99</div>
         </div>
-        <div class="stat">
-          <div class="stat-value">82<span class="unit">%</span></div>
-          <div class="stat-label">Of consumers prefer shopping at businesses that have a mobile app</div>
-          <div class="stat-source">Statista, 2024</div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Setup fee</div>
+          <div class="hero-stat-value">$0</div>
         </div>
       </div>
     </div>
   </section>
- 
+
   <section class="content-section">
     <div class="container">
       <div class="section-grid">
         <div class="section-number">
           <span class="num">01</span>
-          The problem
+          What we build
         </div>
         <div class="section-content">
-          <h2>The chains have apps. <em>You don't.</em></h2>
-          <p>Every Starbucks regular has the Starbucks app. Every Sweetgreen customer has the Sweetgreen app. They open it, tap their order, walk in, pick it up. Their loyalty points pile up. They come back more often, spend more per visit, and never have to remember a phone number.</p>
-          <p>Independent shops have been locked out of this — not because the technology is hard, but because building a real app has cost six figures and six months. Until now.</p>
+          <h2>A real app. <em>Yours.</em></h2>
+          <p>iOS and Android, branded to you. Mobile ordering, loyalty rewards, push notifications, customer database — bundled, ready to go. No template that twenty other shops are using. No six-month build cycle. Just the app your customers will actually use.</p>
         </div>
       </div>
     </div>
   </section>
- 
+
   <section class="content-section">
     <div class="container">
       <div class="section-grid">
         <div class="section-number">
           <span class="num">02</span>
-          What it does
+          How it works
         </div>
         <div class="section-content">
-          <h2>A real app. <em>Yours.</em></h2>
-          <p>iOS and Android, branded entirely to your shop. Your colors, your menu, your logo on every customer's home screen. Not a white-label template that twenty other shops are using — yours.</p>
- 
-          <div class="feature-grid">
-            <div class="feature">
-              <div class="feature-label">Loyalty</div>
-              <h3>Stars, points, free drinks.</h3>
-              <p>Reward regulars automatically. No punch cards to lose, no phone numbers to type. Customers earn just by ordering.</p>
-            </div>
-            <div class="feature">
-              <div class="feature-label">Mobile ordering</div>
-              <h3>Skip the line.</h3>
-              <p>Order ahead, pay in-app, pick up at the counter. Frictionless for them, faster throughput for you.</p>
-            </div>
-            <div class="feature">
-              <div class="feature-label">Push notifications</div>
-              <h3>Reach customers directly.</h3>
-              <p>New seasonal drink? Rainy-day promo? Send a notification. No Instagram algorithm in the way.</p>
-            </div>
-            <div class="feature">
-              <div class="feature-label">Customer list</div>
-              <h3>The data is yours.</h3>
-              <p>Names, emails, order history, preferences — owned by you, not by a third-party platform that could change the rules tomorrow.</p>
-            </div>
-          </div>
+          <h2>Two weeks, <em>three steps.</em></h2>
+          <p>Week one we capture your brand, your menu, your offers. Week two we build, test, and submit to the App Store. Day fifteen your customers download it.</p>
+          <p>We handle the App Store review, the hosting, the updates — all of it. You keep running the shop.</p>
         </div>
       </div>
     </div>
   </section>
- 
+
   <section class="content-section">
     <div class="container">
       <div class="section-grid">
         <div class="section-number">
           <span class="num">03</span>
-          Why it works
+          What it costs
         </div>
         <div class="section-content">
-          <h2>Regulars buy more, <em>more often.</em></h2>
-          <p>The math is simple. A loyalty member visits more often than a one-time customer. They spend more per visit. They tell their friends. An app on their phone makes them a member without the friction of a paper punch card or a "what's your phone number" awkward exchange at the register.</p>
- 
-          <div class="stat-callout">
-            <div class="stat-callout-value">+20%</div>
-            <div class="stat-callout-text">Average increase in revenue from a well-implemented loyalty program, across food &amp; retail</div>
+          <h2>$99 a month. <em>That's it.</em></h2>
+          <p>No setup fee, no contracts, cancel anytime. The math: a loyalty app pays for itself when ten regulars visit one extra time per month.</p>
+
+          <div class="pricing-card">
+            <div class="pricing-price">
+              <span class="currency">$</span>99<span class="period">/ month</span>
+            </div>
+            <div class="pricing-includes">
+              <span>Hosting</span>
+              <span>App Store fees</span>
+              <span>Updates</span>
+              <span>Direct support</span>
+              <span>Cancel anytime</span>
+            </div>
           </div>
- 
-          <p style="margin-top: 24px;">Multiply that across a year of regulars and the app becomes one of the highest-ROI investments a small shop can make. The technology is the easy part. The hard part — knowing what to build and what to leave out — is what we do.</p>
         </div>
       </div>
     </div>
   </section>
- 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">04</span>
-          How we work
-        </div>
-        <div class="section-content">
-          <h2>Two weeks, <em>not two quarters.</em></h2>
-          <p>Week one we capture your brand, your menu, your offers, your voice. Week two we build, test, and submit to the App Store.</p>
-          <p>Day fifteen your customers download it. We handle the App Store review, the hosting, the updates, the bug fixes — all of it. You keep running the shop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
- 
+
   <section class="founder">
     <div class="container-narrow">
       <p class="founder-quote">Indie shops deserve the same software the chains use — without the price tag or the six-month build.</p>
- 
+
       <div class="founder-body">
-        <p>We started Milon Studio because every "small business app" we'd seen was either a glorified punch card or a six-month consulting engagement priced for venture capital.</p>
-        <p>We work with one shop at a time, and you'll deal with the team directly from kickoff to launch. If your shop is on a block we'd walk down on a Saturday, you're who we built this for.</p>
+        <p>I started Milon Studio because every "small business app" I'd seen was either a glorified passport stamp or a six-month consulting engagement priced for venture capital.</p>
+        <p>I work with one shop at a time, and you'll deal with me directly from kickoff to launch. If your shop is on a block I'd walk down on a Saturday, you're who I built this for.</p>
       </div>
- 
+
       <div class="founder-sig">— The Milon Studio team</div>
     </div>
   </section>
- 
+
   <section class="cta-section">
     <div class="container-narrow">
       <div class="cta-eyebrow">— Fifteen minutes —</div>
@@ -724,7 +656,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
     </div>
   </section>
 </main>
- 
+
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -737,6 +669,6 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
     </div>
   </div>
 </footer>
- 
+
 </body>
 </html>
