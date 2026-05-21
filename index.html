@@ -1,674 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milon Studio — Apps that ship in two weeks.</title>
-<meta name="description" content="Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store in two weeks, for $99 a month.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --copper: #C97B3D;
-  --copper-deep: #A86530;
-  --ink: #1F1B16;
-  --ink-soft: rgba(31, 27, 22, 0.65);
-  --paper: #F2EBE0;
-  --paper-deep: #E8DFD0;
-  --pine: #2D4A3E;
-  --rule: rgba(31, 27, 22, 0.12);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-::selection { background: var(--copper); color: var(--paper); }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.55;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  background-image:
-    radial-gradient(circle at 25% 20%, rgba(201, 123, 61, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 75% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.4;
-  z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-main, header, footer { position: relative; z-index: 1; }
-
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.container-narrow {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-header { padding: 32px 0 0; }
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.wordmark {
-  display: inline-flex;
-  align-items: baseline;
-  text-decoration: none;
-  color: var(--ink);
-  gap: 2px;
-}
-
-.wm-m {
-  font-family: 'Fraunces', serif;
-  font-size: 38px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 1;
-  color: var(--copper);
-  line-height: 1;
-}
-
-.wm-rest {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 96, 'SOFT' 50;
-  color: var(--ink);
-  line-height: 1;
-}
-
-.wm-suffix {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-left: 14px;
-  padding-left: 14px;
-  border-left: 0.5px solid var(--rule);
-  align-self: center;
-  padding-top: 2px;
-}
-
-.header-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-}
-
-.header-meta .dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--copper);
-  margin-right: 8px;
-  vertical-align: middle;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.hero { padding: 96px 0 80px; position: relative; }
-
-.hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 32px;
-  height: 0.5px;
-  background: var(--copper);
-}
-
-.hero h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(56px, 9vw, 112px);
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 30;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin-bottom: 40px;
-  max-width: 12ch;
-}
-
-.hero h1 .accent {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--copper);
-  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
-}
-
-.hero-lede {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: 400;
-  line-height: 1.35;
-  color: var(--ink);
-  max-width: 36ch;
-  margin-bottom: 56px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 0.5px solid var(--rule);
-  border-bottom: 0.5px solid var(--rule);
-  padding: 24px 0;
-}
-
-.hero-stat {
-  padding: 0 24px;
-  border-right: 0.5px solid var(--rule);
-}
-
-.hero-stat:last-child { border-right: none; }
-.hero-stat:first-child { padding-left: 0; }
-
-.hero-stat-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 8px;
-}
-
-.hero-stat-value {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 96;
-  color: var(--ink);
-  line-height: 1;
-}
-
-.hero-stat-value .small {
-  font-size: 16px;
-  color: var(--ink-soft);
-}
-
-.content-section {
-  padding: 80px 0;
-  border-bottom: 0.5px solid var(--rule);
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.section-number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--copper);
-  padding-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.section-number .num {
-  font-family: 'Fraunces', serif;
-  font-size: 14px;
-  color: var(--ink-soft);
-  letter-spacing: 0;
-}
-
-.section-content h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(36px, 4.5vw, 52px);
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 24px;
-  max-width: 18ch;
-}
-
-.section-content h2 em {
-  font-style: italic;
-  color: var(--copper);
-  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
-}
-
-.section-content p {
-  font-family: 'Fraunces', serif;
-  font-size: 19px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 14, 'SOFT' 30;
-  line-height: 1.6;
-  color: var(--ink);
-  max-width: 58ch;
-}
-
-.section-content p + p { margin-top: 16px; }
-
-.pricing-card {
-  margin-top: 32px;
-  padding: 32px;
-  background: var(--paper-deep);
-  border: 0.5px solid var(--rule);
-  border-left: 3px solid var(--copper);
-  max-width: 480px;
-}
-
-.pricing-price {
-  font-family: 'Fraunces', serif;
-  font-size: 56px;
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-
-.pricing-price .currency {
-  font-size: 32px;
-  vertical-align: super;
-  margin-right: 2px;
-  color: var(--copper);
-}
-
-.pricing-price .period {
-  font-family: 'Instrument Serif', serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--ink-soft);
-  margin-left: 8px;
-  font-style: italic;
-}
-
-.pricing-includes {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-}
-
-.pricing-includes span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.pricing-includes span::before {
-  content: '+';
-  color: var(--copper);
-  font-weight: 500;
-}
-
-.founder {
-  padding: 96px 0 64px;
-  background: var(--paper-deep);
-  border-bottom: 0.5px solid var(--rule);
-}
-
-.founder-quote {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(26px, 3.5vw, 38px);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--ink);
-  max-width: 24ch;
-  font-style: italic;
-  position: relative;
-}
-
-.founder-quote::before {
-  content: '"';
-  position: absolute;
-  left: -0.5em;
-  top: -0.1em;
-  color: var(--copper);
-  font-size: 1.5em;
-  line-height: 1;
-  font-family: 'Fraunces', serif;
-}
-
-.founder-body { margin-top: 40px; max-width: 56ch; }
-
-.founder-body p {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-.founder-body p + p { margin-top: 14px; }
-
-.founder-sig {
-  margin-top: 32px;
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: 22px;
-  color: var(--copper);
-}
-
-.cta-section {
-  padding: 120px 0;
-  text-align: center;
-  position: relative;
-}
-
-.cta-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 24px;
-}
-
-.cta-headline {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5.5vw, 64px);
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 24px;
-  max-width: 16ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-headline em {
-  font-style: italic;
-  color: var(--copper);
-  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
-}
-
-.cta-sub {
-  font-family: 'Instrument Serif', serif;
-  font-size: 20px;
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 48px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: 'Fraunces', serif;
-  font-size: 19px;
-  font-weight: 400;
-  padding: 22px 40px;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.cta-button::after {
-  content: '→';
-  display: inline-block;
-  transition: transform 0.2s ease;
-  font-size: 22px;
-}
-
-.cta-button:hover { background: var(--copper); }
-.cta-button:hover::after { transform: translateX(4px); }
-
-.cta-detail {
-  margin-top: 28px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-footer {
-  padding: 48px 0;
-  border-top: 0.5px solid var(--rule);
-  background: var(--paper-deep);
-}
-
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px;
-  align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-}
-
-footer a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  border-bottom: 0.5px solid var(--rule);
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
-
-.footer-right { text-align: right; }
-
-@media (max-width: 720px) {
-  .container, .container-narrow { padding: 0 24px; }
-  header { padding: 24px 0 0; }
-  .header-meta { display: none; }
-  .wm-suffix { display: none; }
-  .hero { padding: 64px 0 56px; }
-  .hero-eyebrow { margin-bottom: 24px; }
-  .hero h1 { margin-bottom: 28px; max-width: none; }
-  .hero-lede { margin-bottom: 40px; }
-  .hero-stats { grid-template-columns: 1fr; gap: 16px; }
-  .hero-stat { padding: 12px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
-  .hero-stat:last-child { border-bottom: none; }
-  .hero-stat:first-child { padding-top: 4px; }
-  .section-grid { grid-template-columns: 1fr; gap: 24px; }
-  .section-number { padding-top: 0; }
-  .content-section { padding: 64px 0; }
-  .pricing-card { padding: 24px; }
-  .pricing-price { font-size: 44px; }
-  .founder { padding: 64px 0 48px; }
-  .founder-quote { font-size: 28px; }
-  .cta-section { padding: 80px 0; }
-  .cta-button { padding: 18px 32px; font-size: 17px; }
-  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
-  .footer-right { text-align: left; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeskCheck — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the DeskCheck iOS app." />
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --text: #F2F2F2;
+      --text-muted: #9A9A9A;
+      --accent: #D08B5C;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FAFAFA;
+        --surface: #FFFFFF;
+        --text: #1A1A1A;
+        --text-muted: #6B6B6B;
+        --accent: #C97A52;
+        --border: rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded",
+                   "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 40px 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    p, li {
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin: 0 0 16px;
+    }
+
+    strong { color: var(--text); font-weight: 600; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    a:hover { opacity: 0.85; }
+
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout p:last-child { margin-bottom: 0; }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <main>
+    <header>
+      <p class="eyebrow">DeskCheck</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: May 20, 2026</p>
+    </header>
 
-<header>
-  <div class="container">
-    <div class="header-inner">
-      <a href="/" class="wordmark" aria-label="Milon Studio">
-        <span class="wm-m">M</span><span class="wm-rest">ilon</span>
-        <span class="wm-suffix">Studio</span>
-      </a>
-      <div class="header-meta">
-        <span class="dot"></span>Taking on shops this quarter
-      </div>
+    <div class="callout">
+      <p><strong>Short version:</strong> DeskCheck stores everything on your device. We don't run servers, we don't track you, and we don't sell or share your data with anyone. The only information we ever receive is whatever you choose to share when you sign in with Apple — and even that stays on your phone.</p>
     </div>
-  </div>
-</header>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">An app studio for small businesses</div>
-      <h1>Apps that ship in <span class="accent">two&nbsp;weeks.</span></h1>
-      <p class="hero-lede">Custom mobile apps for the small businesses that built your block. Your name, your menu, your colors — on the App Store, on time, on budget.</p>
+    <h2>What information DeskCheck handles</h2>
+    <p>DeskCheck is a personal utility for tracking your in-office and remote workdays against a hybrid-work requirement. The app handles two kinds of information:</p>
+    <ul>
+      <li><strong>Sign-in information from Apple:</strong> When you sign in with Apple, Apple may share your name and email address with the app, depending on what you choose to share. If you select "Hide My Email," we only ever see Apple's private relay address.</li>
+      <li><strong>Your hybrid-work data:</strong> The days you log as in-office or remote, your weekly target, and the rolling window length you set during onboarding.</li>
+    </ul>
 
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-label">Time to launch</div>
-          <div class="hero-stat-value">14 <span class="small">days</span></div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Monthly cost</div>
-          <div class="hero-stat-value">$99</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Setup fee</div>
-          <div class="hero-stat-value">$0</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2>How the information is used</h2>
+    <p>Your name and email (if provided) are shown in the app's Profile tab so you can see which account you're signed in with. Your hybrid-work data is used to calculate your progress, populate the calendar, and show your history. That's it.</p>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">01</span>
-          What we build
-        </div>
-        <div class="section-content">
-          <h2>A real app. <em>Yours.</em></h2>
-          <p>iOS and Android, branded to you. Mobile ordering, loyalty rewards, push notifications, customer database — bundled, ready to go. No template that twenty other shops are using. No six-month build cycle. Just the app your customers will actually use.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2>Where the information is stored</h2>
+    <p>All of the information above is stored <strong>only on your device</strong>, in the app's local database. DeskCheck does not have a backend server. We do not transmit, upload, sync, or back up any of your data to any external service.</p>
+    <p>This also means: if you delete the app, or use the "Delete all data" action in Settings, your data is gone — we cannot recover it.</p>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">02</span>
-          How it works
-        </div>
-        <div class="section-content">
-          <h2>Two weeks, <em>three steps.</em></h2>
-          <p>Week one we capture your brand, your menu, your offers. Week two we build, test, and submit to the App Store. Day fifteen your customers download it.</p>
-          <p>We handle the App Store review, the hosting, the updates — all of it. You keep running the shop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2>Third-party services</h2>
+    <p>DeskCheck uses one third-party service: <strong>Sign in with Apple</strong>. The interaction is handled entirely by Apple, and the data Apple chooses to share with the app is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.</p>
+    <p>DeskCheck does not use any analytics services, advertising networks, crash reporting services, or other third-party SDKs.</p>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">03</span>
-          What it costs
-        </div>
-        <div class="section-content">
-          <h2>$99 a month. <em>That's it.</em></h2>
-          <p>No setup fee, no contracts, cancel anytime. The math: a loyalty app pays for itself when ten regulars visit one extra time per month.</p>
+    <h2>Tracking</h2>
+    <p>DeskCheck does not track you across other apps or websites. We do not use cookies, advertising identifiers, or similar technologies.</p>
 
-          <div class="pricing-card">
-            <div class="pricing-price">
-              <span class="currency">$</span>99<span class="period">/ month</span>
-            </div>
-            <div class="pricing-includes">
-              <span>Hosting</span>
-              <span>App Store fees</span>
-              <span>Updates</span>
-              <span>Direct support</span>
-              <span>Cancel anytime</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2>Your controls</h2>
+    <ul>
+      <li><strong>Sign out</strong> from Settings → Account. This removes your profile from the device. Your logged days stay so you can resume later.</li>
+      <li><strong>Delete all data</strong> from Settings → Data. This removes every log and your profile, returning the app to its first-run state.</li>
+      <li><strong>Revoke Sign in with Apple</strong> from your iPhone's system Settings → Apple ID → Sign in with Apple. This disconnects DeskCheck from your Apple ID.</li>
+      <li><strong>Delete the app</strong> from your home screen. iOS removes the app and its local data together.</li>
+    </ul>
 
-  <section class="founder">
-    <div class="container-narrow">
-      <p class="founder-quote">Indie shops deserve the same software the chains use — without the price tag or the six-month build.</p>
+    <h2>Children's privacy</h2>
+    <p>DeskCheck is rated for ages 4 and up but is intended for adults tracking their own work schedule. We do not knowingly collect personal information from children under 13.</p>
 
-      <div class="founder-body">
-        <p>I started Milon Studio because every "small business app" I'd seen was either a glorified passport stamp or a six-month consulting engagement priced for venture capital.</p>
-        <p>I work with one shop at a time, and you'll deal with me directly from kickoff to launch. If your shop is on a block I'd walk down on a Saturday, you're who I built this for.</p>
-      </div>
+    <h2>Changes to this policy</h2>
+    <p>If we make changes to this policy, we'll update the "Last updated" date above and post the revised policy at this URL. Material changes may be highlighted within the app on the next update.</p>
 
-      <div class="founder-sig">— The Milon Studio team</div>
-    </div>
-  </section>
+    <h2>Contact</h2>
+    <p>Questions about this policy? Reach out at <a href="mailto:[YOUR-EMAIL]">[YOUR-EMAIL]</a>.</p>
 
-  <section class="cta-section">
-    <div class="container-narrow">
-      <div class="cta-eyebrow">— Fifteen minutes —</div>
-      <h2 class="cta-headline">See the app on a screen, then <em>decide.</em></h2>
-      <p class="cta-sub">No deck. No pitch. No follow-up sequence.</p>
-      <a href="https://cal.com/milonstudios/15min" class="cta-button">Book a call</a>
-      <div class="cta-detail">Or email hi@milonstudio.com</div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        Milon Studio · <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
-      </div>
-      <div class="footer-right">
-        111 John Street, New York, NY 10038
-      </div>
-    </div>
-  </div>
-</footer>
-
+    <footer>
+      <p>&copy; 2026 Milon Studios. DeskCheck is a personal utility, not a service.</p>
+    </footer>
+  </main>
 </body>
 </html>
