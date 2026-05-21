@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policies — Milon Studio</title>
+<meta name="description" content="Privacy policies for Milon Studio apps.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --copper: #C97B3D;
+  --copper-deep: #A86530;
+  --ink: #1F1B16;
+  --ink-soft: rgba(31, 27, 22, 0.65);
+  --paper: #F2EBE0;
+  --paper-deep: #E8DFD0;
+  --rule: rgba(31, 27, 22, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+::selection { background: var(--copper); color: var(--paper); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(201, 123, 61, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+header { padding: 32px 0 0; }
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  gap: 2px;
+}
+
+.wm-m {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 1;
+  color: var(--copper);
+  line-height: 1;
+}
+
+.wm-rest {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.wm-suffix {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 0.5px solid var(--rule);
+  align-self: center;
+  padding-top: 2px;
+}
+
+.header-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.hero {
+  padding: 96px 0 64px;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--copper);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 7vw, 84px);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 28px;
+  max-width: 16ch;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--copper);
+  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
+}
+
+.hero-lede {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 48ch;
+  font-style: italic;
+}
+
+.apps-section {
+  padding: 32px 0 120px;
+}
+
+.apps-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: var(--paper-deep);
+  border: 0.5px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  min-height: 220px;
+}
+
+.app-card:hover {
+  border-color: var(--copper);
+  transform: translateY(-2px);
+}
+
+.app-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.app-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.app-card p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.app-card-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.app-card-link::after {
+  content: '→';
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.app-card:hover .app-card-link { color: var(--copper); }
+.app-card:hover .app-card-link::after { transform: translateX(4px); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.15s ease;
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 14px;
+}
+
+.back-link:hover { color: var(--copper); }
+
+footer {
+  padding: 48px 0;
+  border-top: 0.5px solid var(--rule);
+  background: var(--paper-deep);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rule);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+.footer-right { text-align: right; }
+
+.footer-sep {
+  display: inline-block;
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0 24px; }
+  header { padding: 24px 0 0; }
+  .header-meta { display: none; }
+  .wm-suffix { display: none; }
+  .hero { padding: 56px 0 40px; }
+  .hero h1 { max-width: none; }
+  .apps-grid { grid-template-columns: 1fr; }
+  .app-card { padding: 28px; min-height: 180px; }
+  .apps-section { padding: 24px 0 80px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="Milon Studio">
+        <span class="wm-m">M</span><span class="wm-rest">ilon</span>
+        <span class="wm-suffix">Studio</span>
+      </a>
+      <div class="header-meta">
+        Privacy policies
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <a href="/" class="back-link">Back to Milon Studio</a>
+      <div class="hero-eyebrow">Privacy</div>
+      <h1>Privacy policies, <em>by app.</em></h1>
+      <p class="hero-lede">Every Milon Studio app gets its own policy. Pick the app you're looking for.</p>
+    </div>
+  </section>
+
+  <section class="apps-section">
+    <div class="container">
+      <div class="apps-label">Apps</div>
+      <div class="apps-grid">
+        <a href="/privacy/deskcheck.html" class="app-card">
+          <div class="app-card-label">iOS</div>
+          <h2>DeskCheck</h2>
+          <p>Track in-office and remote workdays against your hybrid-work requirement.</p>
+          <span class="app-card-link">Read policy</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        Milon Studio
+        <span class="footer-sep">·</span>
+        <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy/">Privacy policies</a>
+      </div>
+      <div class="footer-right">
+        111 John Street, New York, NY 10038
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

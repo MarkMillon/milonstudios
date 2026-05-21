@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeskCheck — Privacy Policy</title>
+<meta name="description" content="Privacy policy for the DeskCheck iOS app.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --copper: #C97B3D;
+  --copper-deep: #A86530;
+  --ink: #1F1B16;
+  --ink-soft: rgba(31, 27, 22, 0.65);
+  --paper: #F2EBE0;
+  --paper-deep: #E8DFD0;
+  --rule: rgba(31, 27, 22, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+::selection { background: var(--copper); color: var(--paper); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(201, 123, 61, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+header { padding: 32px 0 0; }
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  gap: 2px;
+}
+
+.wm-m {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 1;
+  color: var(--copper);
+  line-height: 1;
+}
+
+.wm-rest {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.wm-suffix {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 0.5px solid var(--rule);
+  align-self: center;
+  padding-top: 2px;
+}
+
+.header-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 32px 96px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: color 0.15s ease;
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 14px;
+}
+
+.back-link:hover { color: var(--copper); }
+
+.doc-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--copper);
+}
+
+.doc-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.doc-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--copper);
+  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
+}
+
+.doc-updated {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.callout {
+  background: var(--paper-deep);
+  border-left: 3px solid var(--copper);
+  padding: 24px 28px;
+  margin: 0 0 40px;
+}
+
+.callout p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.callout p strong {
+  font-family: 'Fraunces', serif;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--copper);
+}
+
+.doc h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 48px 0 16px;
+}
+
+.doc p, .doc li {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.doc strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.doc ul {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.doc li {
+  margin-bottom: 10px;
+}
+
+.doc a {
+  color: var(--copper);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--copper);
+  transition: opacity 0.15s ease;
+}
+
+.doc a:hover { opacity: 0.7; }
+
+.doc-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+footer {
+  padding: 48px 0;
+  border-top: 0.5px solid var(--rule);
+  background: var(--paper-deep);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rule);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+.footer-right { text-align: right; }
+
+.footer-sep {
+  display: inline-block;
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0 24px; }
+  header { padding: 24px 0 0; }
+  .header-meta { display: none; }
+  .wm-suffix { display: none; }
+  .doc { padding: 48px 24px 80px; }
+  .doc h2 { margin-top: 36px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="Milon Studio">
+        <span class="wm-m">M</span><span class="wm-rest">ilon</span>
+        <span class="wm-suffix">Studio</span>
+      </a>
+      <div class="header-meta">
+        DeskCheck · Privacy
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="doc">
+    <a href="/privacy/" class="back-link">All privacy policies</a>
+
+    <div class="doc-eyebrow">DeskCheck for iOS</div>
+    <h1 class="doc-title">Privacy <em>Policy.</em></h1>
+    <p class="doc-updated">Last updated · May 20, 2026</p>
+
+    <div class="callout">
+      <p><strong>Short version:</strong> DeskCheck stores everything on your device. We don't run servers, we don't track you, and we don't sell or share your data with anyone. The only information we ever receive is whatever you choose to share when you sign in with Apple — and even that stays on your phone.</p>
+    </div>
+
+    <h2>What information DeskCheck handles</h2>
+    <p>DeskCheck is a personal utility for tracking your in-office and remote workdays against a hybrid-work requirement. The app handles two kinds of information:</p>
+    <ul>
+      <li><strong>Sign-in information from Apple:</strong> When you sign in with Apple, Apple may share your name and email address with the app, depending on what you choose to share. If you select "Hide My Email," we only ever see Apple's private relay address.</li>
+      <li><strong>Your hybrid-work data:</strong> The days you log as in-office or remote, your weekly target, and the rolling window length you set during onboarding.</li>
+    </ul>
+
+    <h2>How the information is used</h2>
+    <p>Your name and email (if provided) are shown in the app's Profile tab so you can see which account you're signed in with. Your hybrid-work data is used to calculate your progress, populate the calendar, and show your history. That's it.</p>
+
+    <h2>Where the information is stored</h2>
+    <p>All of the information above is stored <strong>only on your device</strong>, in the app's local database. DeskCheck does not have a backend server. We do not transmit, upload, sync, or back up any of your data to any external service.</p>
+    <p>This also means: if you delete the app, or use the "Delete all data" action in Settings, your data is gone — we cannot recover it.</p>
+
+    <h2>Third-party services</h2>
+    <p>DeskCheck uses one third-party service: <strong>Sign in with Apple</strong>. The interaction is handled entirely by Apple, and the data Apple chooses to share with the app is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.</p>
+    <p>DeskCheck does not use any analytics services, advertising networks, crash reporting services, or other third-party SDKs.</p>
+
+    <h2>Tracking</h2>
+    <p>DeskCheck does not track you across other apps or websites. We do not use cookies, advertising identifiers, or similar technologies.</p>
+
+    <h2>Your controls</h2>
+    <ul>
+      <li><strong>Sign out</strong> from Settings → Account. This removes your profile from the device. Your logged days stay so you can resume later.</li>
+      <li><strong>Delete all data</strong> from Settings → Data. This removes every log and your profile, returning the app to its first-run state.</li>
+      <li><strong>Revoke Sign in with Apple</strong> from your iPhone's system Settings → Apple ID → Sign in with Apple. This disconnects DeskCheck from your Apple ID.</li>
+      <li><strong>Delete the app</strong> from your home screen. iOS removes the app and its local data together.</li>
+    </ul>
+
+    <h2>Children's privacy</h2>
+    <p>DeskCheck is rated for ages 4 and up but is intended for adults tracking their own work schedule. We do not knowingly collect personal information from children under 13.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we make changes to this policy, we'll update the "Last updated" date above and post the revised policy at this URL. Material changes may be highlighted within the app on the next update.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Reach out at <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>.</p>
+
+    <div class="doc-footer">
+      © 2026 Milon Studio · DeskCheck is a personal utility, not a service.
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        Milon Studio
+        <span class="footer-sep">·</span>
+        <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy/">Privacy policies</a>
+      </div>
+      <div class="footer-right">
+        111 John Street, New York, NY 10038
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
