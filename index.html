@@ -123,6 +123,29 @@ header { padding: 32px 0 0; }
   padding-top: 2px;
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 0.5px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--copper);
+  border-bottom-color: var(--copper);
+}
+
 .header-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -589,9 +612,12 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
         <span class="wm-m">M</span><span class="wm-rest">ilon</span>
         <span class="wm-suffix">Studio</span>
       </a>
-      <div class="header-meta">
-        <span class="dot"></span>Taking on shops this quarter
-      </div>
+      <nav class="header-nav">
+        <a href="/portfolio/" class="nav-link">Portfolio</a>
+        <div class="header-meta">
+          <span class="dot"></span>Taking on shops this quarter
+        </div>
+      </nav>
     </div>
   </div>
 </header>
@@ -746,6 +772,8 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
         Milon Studio
         <span class="footer-sep">·</span>
         <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
+        <span class="footer-sep">·</span>
+        <a href="/portfolio/">Portfolio</a>
         <span class="footer-sep">·</span>
         <a href="/privacy/">Privacy policies</a>
       </div>

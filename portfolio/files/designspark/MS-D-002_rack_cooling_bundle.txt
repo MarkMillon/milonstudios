@@ -1,0 +1,232 @@
+================================================================
+ DESIGNSPARK PCB PROJECT BUNDLE
+ MS-D-002  SSIE 567 RACK COOLING DEMONSTRATOR  REV B
+ Mark Fuchs / Milon Studio  -  2025-07-09
+================================================================
+
+NOTE ON FORMAT
+--------------
+DesignSpark PCB uses a proprietary semi-binary file format (.pcb / .sch / .prj)
+that cannot reliably be hand-authored outside the application. This bundle
+provides the engineering deliverables (netlist + BOM + design rules + drill
+table) that DesignSpark would generate on export, packaged as plain text so
+the design intent is fully recoverable.
+
+To recreate in DesignSpark:
+  1. File -> New -> Project, name "MS-D-002_rack_cooling"
+  2. Import this netlist via File -> Import -> Netlist (Tango/Protel format below)
+  3. Use the BOM here to add components from the RS Components library
+  4. Apply the design rules at the end of this file
+
+
+PROTEL-FORMAT NETLIST
+================================================================
+[
+PARTS
+
+[
+U1
+LQFP48
+STM32F401CCU6
+]
+[
+U2
+SOIC8
+TPS54360DDA
+]
+[
+U3
+SOT-23-5
+TLV9001
+]
+[
+U4
+SOT-23-6
+TLV9001 x4
+]
+[
+J1
+USB_C_RECEPTACLE
+USBC-31-M-12
+]
+[
+J2
+DC_BARREL
+PJ-002A-SMT-TR
+]
+[
+Q1
+DPAK
+IRLR8113TRPBF
+]
+[
+Q2
+DPAK
+IRLR8113TRPBF
+]
+[
+Q3
+DPAK
+IRLR8113TRPBF
+]
+[
+Q4
+DPAK
+IRLR8113TRPBF
+]
+[
+T1-T4
+0603
+NTCLE100E3103JB0
+]
+[
+L1
+SMD_1210
+SRR1210-100M
+]
+[
+C1
+1210
+22uF/35V X7R
+]
+[
+C2-C8
+0805
+10uF/16V X7R
+]
+[
+R1-R4
+1206
+0.05R 1% PWR
+]
+]
+
+NETS
+
+(
++12V
+J2-1 L1-1 C1-1 U2-1
+)
+(
++5V
+U2-3 C2-1 C3-1 U1-VBAT U1-VDD
+)
+(
++3V3
+U3-1 U1-VDDA C4-1
+)
+(
+GND
+J2-2 C1-2 C2-2 C3-2 C4-2 U1-VSS U2-2 Q1-2 Q2-2 Q3-2 Q4-2
+T1-2 T2-2 T3-2 T4-2 R1-2 R2-2 R3-2 R4-2
+)
+(
+PWM_FAN1
+U1-PA0 Q1-1
+)
+(
+PWM_FAN2
+U1-PA1 Q2-1
+)
+(
+PWM_FAN3
+U1-PA2 Q3-1
+)
+(
+PWM_FAN4
+U1-PA3 Q4-1
+)
+(
+NTC1
+U1-PA4 T1-1
+)
+(
+NTC2
+U1-PA5 T2-1
+)
+(
+NTC3
+U1-PA6 T3-1
+)
+(
+NTC4
+U1-PA7 T4-1
+)
+(
+USB_DP
+J1-A6 J1-B6 U1-PA12
+)
+(
+USB_DM
+J1-A7 J1-B7 U1-PA11
+)
+
+
+BILL OF MATERIALS (RS COMPONENTS STOCK)
+================================================================
+| REF       | DESC                          | RS STOCK NO | QTY |
+|-----------|-------------------------------|-------------|-----|
+| U1        | STM32F401CCU6                 | 894-9456    | 1   |
+| U2        | TPS54360DDA  12V->5V buck     | 829-1041    | 1   |
+| U3        | TLV9001 op-amp                | 174-7895    | 1   |
+| Q1-Q4     | IRLR8113 N-MOSFET DPAK        | 723-3651    | 4   |
+| T1-T4     | NTC 10k 0603                  | 528-6361    | 4   |
+| L1        | SRR1210 10uH 3.5A             | 696-7301    | 1   |
+| C1        | 22uF/35V X7R 1210             | 723-9985    | 1   |
+| C2-C8     | 10uF/16V X7R 0805             | 723-9920    | 7   |
+| R1-R4     | 0.05R 1% 1206 power           | 666-7821    | 4   |
+| J1        | USB-C receptacle 16-pin       | 270-7920    | 1   |
+| J2        | DC barrel 5.5x2.1mm           | 489-1115    | 1   |
+| FAN1-4    | Sunon MF40101V2 40mm 12V PWM  | 535-6722    | 4   |
+| H1-H4     | M3 brass standoff 10mm        | 250-0123    | 4   |
++ enclosure: Hammond 1455N1601BK  RS 489-7370
+
+
+DESIGN RULES
+================================================================
+General
+  Min track width          0.20 mm
+  Min track-to-track       0.20 mm
+  Min track-to-pad         0.20 mm
+  Min pad-to-pad           0.20 mm
+  Min via diameter         0.60 mm  (0.30 mm drill)
+  Min hole-to-hole         0.30 mm
+  Board outline clearance  0.50 mm
+
+Power Net Class  (+12V, +5V, +3V3, GND)
+  Track width              0.50 mm  (1.20 mm for +12V)
+  Clearance                0.30 mm
+
+USB Diff Pair Class (USB_DP / USB_DM)
+  Track width              0.20 mm
+  Gap                      0.15 mm
+  Length match             +/- 0.5 mm
+
+Layer stack
+  L1 (top)     35 um Cu, signal + components
+  Substrate    FR-4  1.6 mm
+  L2 (bottom)  35 um Cu, ground pour + reroutes
+  Soldermask   green LPI both sides
+  Silkscreen   white both sides
+  Finish       HASL lead-free
+
+
+DRILL TABLE
+================================================================
+  Hole   Qty   Plating
+  0.30   86    PTH (vias)
+  0.65   48    PTH (component leads)
+  0.90   16    PTH (connector leads)
+  3.20   4     NPTH (M3 mounting)
+
+
+REVISION HISTORY
+================================================================
+Rev A  2025-04-22  Initial release
+Rev B  2025-07-09  Added thermal vias under each MOSFET DPAK pad;
+                   moved MOSFET gate resistors closer to gates;
+                   widened +12V trace to 1.2mm (was 0.8mm) per
+                   IPC-2152 internal-layer ampacity at 30 C rise.
+
+
+END OF BUNDLE
