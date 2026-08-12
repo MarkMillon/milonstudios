@@ -1,0 +1,109 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1d1d1f;
+  line-height: 1.6;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+.topbar {
+  background: #1d1d1f;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 0.5px; }
+.logo-accent { color: #ff8c00; }
+
+.topbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.95rem;
+}
+.topbar nav a:hover { color: #ff8c00; }
+
+.hero {
+  background: linear-gradient(135deg, #1d1d1f 0%, #32323a 100%);
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+.hero p { max-width: 560px; margin: 0 auto 28px; opacity: 0.9; }
+
+.btn {
+  display: inline-block;
+  background: #ff8c00;
+  color: #1d1d1f;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { background: #ffa233; }
+
+section { padding: 64px 0; }
+.products { background: #f5f5f7; }
+h2 { font-size: 1.6rem; margin-bottom: 28px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-img {
+  height: 140px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.card h3 { font-size: 1.05rem; }
+.card .meta { color: #666; font-size: 0.85rem; margin: 4px 0 10px; }
+.price { font-weight: 700; font-size: 1.2rem; }
+.price span { font-weight: 400; font-size: 0.85rem; color: #666; }
+.pack { color: #444; font-size: 0.9rem; }
+
+.note { margin-top: 24px; font-size: 0.9rem; color: #555; }
+.note a { color: #ff8c00; }
+
+.about { background: #fff; }
+.about .small { margin-top: 16px; font-size: 0.85rem; color: #666; }
+
+.contact { background: #f5f5f7; }
+.contact p { margin-bottom: 8px; }
+
+footer {
+  background: #1d1d1f;
+  color: #aaa;
+  padding: 28px 0;
+  font-size: 0.85rem;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+footer a { color: #eee; text-decoration: none; }
