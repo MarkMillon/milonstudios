@@ -256,6 +256,73 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
 }
 
+
+/* ---------- Work ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.work-card {
+  display: flex; flex-direction: column;
+  border: 0.5px solid var(--rule); border-radius: 14px;
+  background: var(--paper); overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+a.work-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+
+.work-stage {
+  height: 200px;
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden; background: var(--paper-deep);
+}
+
+.work-body { padding: 22px 24px 26px; text-align: left; }
+
+.work-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 10px;
+}
+
+.work-body h3 {
+  font-family: 'Fraunces', serif; font-size: 22px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink); line-height: 1.2; margin-bottom: 8px;
+}
+
+.work-body p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+.work-stage.stage-dark {
+  background: linear-gradient(160deg, var(--pine) 0%, #22392F 100%);
+  align-items: center;
+}
+.chat { width: 80%; }
+.chat-bubble {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.5;
+  border-radius: 10px; padding: 9px 12px; margin-bottom: 8px;
+  text-align: left; max-width: 88%;
+}
+.chat-bubble.user {
+  background: rgba(242, 235, 224, 0.16); color: var(--paper);
+  margin-left: auto; border-bottom-right-radius: 3px;
+}
+.chat-bubble.reply {
+  background: var(--copper); color: var(--ink);
+  margin-right: auto; border-bottom-left-radius: 3px; margin-bottom: 0;
+}
+.chat-typing {
+  display: inline-flex; gap: 4px; padding: 8px 12px;
+  background: rgba(242, 235, 224, 0.12); border-radius: 10px; margin-top: 8px;
+}
+.chat-typing span {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--paper); opacity: 0.5;
+  animation: blink 1.2s infinite;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 60%, 100% { opacity: 0.3; } 30% { opacity: 1; } }
+
 footer { padding: 44px 0; border-top: 0.5px solid var(--rule); }
 
 .footer-inner {
@@ -279,6 +346,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   .steps-grid { grid-template-columns: 1fr; gap: 36px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+  .work-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 
 @media (max-width: 720px) {
@@ -307,7 +375,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       </a>
       <nav class="header-nav">
         <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="/#work" class="nav-link">Work</a>
+        <a href="#work" class="nav-link">Work</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="/start/?service=ai" class="nav-cta">Get Started</a>
       </nav>
@@ -383,6 +451,63 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
           <div class="step-num">03</div>
           <h3>Go live</h3>
           <p>Day fifteen it's answering customers. We handle hosting, updates, and tuning — you keep running the shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">What it looks like</div>
+        <h2>AI at <em>work.</em></h2>
+        <p class="section-sub">Concept builds — every system is trained fresh on your business.</p>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-stage stage-dark">
+            <div class="chat">
+              <div class="chat-bubble user">Do you have space for 4 on Saturday?</div>
+              <div class="chat-bubble reply">Yes — 7pm is open. Want me to book it?</div>
+              <div class="chat-typing"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Booking assistant</div>
+            <h3>Front of house</h3>
+            <p>Takes reservations over text and web chat, confirms, and sends reminders.</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-stage stage-dark">
+            <div class="chat">
+              <div class="chat-bubble user">Do you fix cracked screens?</div>
+              <div class="chat-bubble reply">We do — same-day for most phones. Want a quote?</div>
+              <div class="chat-typing"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Customer service</div>
+            <h3>Inbox copilot</h3>
+            <p>Answers the questions you get every day — instantly, in your voice, on every channel.</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-stage stage-dark">
+            <div class="chat">
+              <div class="chat-bubble reply">Heads up — oat milk is low. Draft a reorder?</div>
+              <div class="chat-bubble user">Yes, order 2 cases.</div>
+              <div class="chat-typing"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Back office</div>
+            <h3>Shop steward</h3>
+            <p>Watches stock, drafts reorders, chases invoices, and requests reviews — quietly.</p>
+          </div>
         </div>
       </div>
     </div>

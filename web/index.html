@@ -256,6 +256,74 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
 }
 
+
+/* ---------- Work ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.work-card {
+  display: flex; flex-direction: column;
+  border: 0.5px solid var(--rule); border-radius: 14px;
+  background: var(--paper); overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+a.work-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+
+.work-stage {
+  height: 200px;
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden; background: var(--paper-deep);
+}
+
+.work-body { padding: 22px 24px 26px; text-align: left; }
+
+.work-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 10px;
+}
+
+.work-body h3 {
+  font-family: 'Fraunces', serif; font-size: 22px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink); line-height: 1.2; margin-bottom: 8px;
+}
+
+.work-body p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+.wb {
+  width: 80%; background: var(--paper);
+  border: 0.5px solid var(--rule); border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease;
+}
+a.work-card:hover .wb, .work-card:hover .wb { transform: translateY(-5px); }
+
+.wb-bar {
+  background: var(--paper-deep); border-radius: 10px 10px 0 0;
+  padding: 9px 12px; display: flex; align-items: center; gap: 6px;
+}
+.wb-dot { width: 6px; height: 6px; border-radius: 50%; }
+.wb-dot:nth-child(1) { background: var(--copper); }
+.wb-dot:nth-child(2) { background: var(--pine); }
+.wb-dot:nth-child(3) { background: rgba(31, 27, 22, 0.35); }
+.wb-url {
+  flex: 1; margin-left: 6px; background: var(--paper); border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 8px;
+  color: var(--ink-soft); padding: 3px 8px; text-align: left;
+}
+.wb-body { padding: 14px 16px 0; text-align: left; }
+.wb-headline { font-family: 'Fraunces', serif; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+.wb-line { height: 6px; background: var(--rule); border-radius: 3px; margin-bottom: 6px; }
+.wb-line.short { width: 60%; }
+.wb-cta {
+  display: inline-block; background: var(--copper); color: var(--paper);
+  font-family: 'JetBrains Mono', monospace; font-size: 8px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border-radius: 4px; padding: 5px 10px; margin: 6px 0 14px;
+}
+
 footer { padding: 44px 0; border-top: 0.5px solid var(--rule); }
 
 .footer-inner {
@@ -279,6 +347,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   .steps-grid { grid-template-columns: 1fr; gap: 36px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+  .work-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 
 @media (max-width: 720px) {
@@ -307,7 +376,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       </a>
       <nav class="header-nav">
         <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="/#work" class="nav-link">Work</a>
+        <a href="#work" class="nav-link">Work</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="/start/?service=web" class="nav-cta">Get Started</a>
       </nav>
@@ -382,6 +451,83 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
           <div class="step-num">03</div>
           <h3>Launch</h3>
           <p>Live on your domain. We handle hosting, updates, and fixes — you keep running the business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">Recent work</div>
+        <h2>Sites we've <em>built.</em></h2>
+      </div>
+
+      <div class="work-grid">
+        <a href="/barbell-bulk-store/" class="work-card">
+          <div class="work-stage">
+            <div class="wb">
+                <div class="wb-bar">
+                  <span class="wb-dot"></span><span class="wb-dot"></span><span class="wb-dot"></span>
+                  <span class="wb-url">strengthfuel.shop</span>
+                </div>
+                <div class="wb-body">
+                  <div class="wb-headline">Fuel your training.</div>
+                  <div class="wb-line"></div>
+                  <div class="wb-line short"></div>
+                  <span class="wb-cta">Shop bars</span>
+                </div>
+              </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Storefront — Live</div>
+            <h3>StrengthFuel</h3>
+            <p>A bulk protein-bar storefront with Shopify checkout — built to move pallets.</p>
+          </div>
+        </a>
+
+        <a href="/" class="work-card">
+          <div class="work-stage">
+            <div class="wb">
+                <div class="wb-bar">
+                  <span class="wb-dot"></span><span class="wb-dot"></span><span class="wb-dot"></span>
+                  <span class="wb-url">milonstudios.com</span>
+                </div>
+                <div class="wb-body">
+                  <div class="wb-headline">One studio. Three ways to grow.</div>
+                  <div class="wb-line"></div>
+                  <div class="wb-line short"></div>
+                  <span class="wb-cta">Start a project</span>
+                </div>
+              </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Studio site — You're on it</div>
+            <h3>Milon Studio</h3>
+            <p>This site — designed and built exactly the way we'd build yours.</p>
+          </div>
+        </a>
+
+        <div class="work-card">
+          <div class="work-stage">
+            <div class="wb">
+                <div class="wb-bar">
+                  <span class="wb-dot"></span><span class="wb-dot"></span><span class="wb-dot"></span>
+                  <span class="wb-url">cornerstonebakery.com</span>
+                </div>
+                <div class="wb-body">
+                  <div class="wb-headline">Fresh bread, daily.</div>
+                  <div class="wb-line"></div>
+                  <div class="wb-line short"></div>
+                  <span class="wb-cta">Order now</span>
+                </div>
+              </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Local bakery</div>
+            <h3>Cornerstone Bakery</h3>
+            <p>A one-page site with menu, hours, and order-ahead built in.</p>
+          </div>
         </div>
       </div>
     </div>

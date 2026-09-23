@@ -256,6 +256,89 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
 }
 
+
+/* ---------- Work ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.work-card {
+  display: flex; flex-direction: column;
+  border: 0.5px solid var(--rule); border-radius: 14px;
+  background: var(--paper); overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+a.work-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+
+.work-stage {
+  height: 200px;
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden; background: var(--paper-deep);
+}
+
+.work-body { padding: 22px 24px 26px; text-align: left; }
+
+.work-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 10px;
+}
+
+.work-body h3 {
+  font-family: 'Fraunces', serif; font-size: 22px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink); line-height: 1.2; margin-bottom: 8px;
+}
+
+.work-body p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+.pp-phone {
+  width: 146px; border: 6px solid var(--ink); border-bottom: none;
+  border-radius: 24px 24px 0 0; background: var(--paper);
+  padding: 22px 11px 0; position: relative;
+  transition: transform 0.3s ease;
+}
+.work-card:hover .pp-phone { transform: translateY(-5px); }
+.pp-phone::before {
+  content: ''; position: absolute; top: 9px; left: 50%;
+  transform: translateX(-50%); width: 36px; height: 4px;
+  border-radius: 3px; background: var(--ink); opacity: 0.4;
+}
+.pp-appname {
+  font-family: 'JetBrains Mono', monospace; font-size: 8px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 8px; text-align: left;
+}
+.pp-card {
+  background: var(--paper-deep); border: 0.5px solid var(--rule);
+  border-radius: 8px; padding: 10px; margin-bottom: 8px; text-align: left;
+}
+.pp-title { font-family: 'Fraunces', serif; font-size: 12px; color: var(--ink); margin-bottom: 6px; }
+.pp-sub { font-family: 'Fraunces', serif; font-size: 9px; color: var(--ink-soft); }
+.pp-days { display: flex; gap: 5px; margin-bottom: 7px; }
+.pp-day {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 1.5px solid var(--pine);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 7px; color: var(--pine);
+}
+.pp-day.filled { background: var(--pine); color: var(--paper); }
+.pp-stamps { display: flex; gap: 4px; margin-bottom: 6px; }
+.pp-stamp { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--copper); }
+.pp-stamp.filled { background: var(--copper); }
+.pp-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
+.pp-chip {
+  font-family: 'JetBrains Mono', monospace; font-size: 7.5px;
+  padding: 4px 7px; border-radius: 20px;
+  border: 1px solid var(--rule); color: var(--ink-soft);
+}
+.pp-chip.on { background: var(--pine); border-color: var(--pine); color: var(--paper); }
+.pp-btn {
+  background: var(--ink); color: var(--paper); text-align: center;
+  font-family: 'Fraunces', serif; font-size: 11px;
+  padding: 8px; border-radius: 6px;
+}
+
 footer { padding: 44px 0; border-top: 0.5px solid var(--rule); }
 
 .footer-inner {
@@ -279,6 +362,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   .steps-grid { grid-template-columns: 1fr; gap: 36px; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+  .work-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 
 @media (max-width: 720px) {
@@ -307,7 +391,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       </a>
       <nav class="header-nav">
         <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="/#work" class="nav-link">Work</a>
+        <a href="#work" class="nav-link">Work</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="/start/?service=app" class="nav-cta">Get Started</a>
       </nav>
@@ -323,7 +407,7 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
       <p class="hero-lede">Custom iOS and Android apps with loyalty, mobile ordering, and push notifications — live in two weeks, not two quarters.</p>
       <div class="hero-actions">
         <a href="/start/?service=app" class="cta-button">Start a Project</a>
-        <a href="/#work" class="cta-button secondary">See Our Work</a>
+        <a href="#work" class="cta-button secondary">See Our Work</a>
       </div>
     </div>
   </section>
@@ -383,6 +467,91 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
           <div class="step-num">03</div>
           <h3>Day fifteen</h3>
           <p>Your customers download it. We handle review, hosting, updates, and fixes — you keep running the shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">Recent work</div>
+        <h2>Apps we've <em>made.</em></h2>
+      </div>
+
+      <div class="work-grid">
+        <a href="/privacy/deskcheck.html" class="work-card">
+          <div class="work-stage">
+            <div class="pp-phone">
+              <div class="pp-appname">DeskCheck</div>
+              <div class="pp-card">
+                <div class="pp-title">This week</div>
+                <div class="pp-days">
+                  <span class="pp-day filled">M</span>
+                  <span class="pp-day filled">T</span>
+                  <span class="pp-day filled">W</span>
+                  <span class="pp-day">T</span>
+                  <span class="pp-day">F</span>
+                </div>
+                <div class="pp-sub">3 of 3 office days — you're set</div>
+              </div>
+              <div class="pp-btn">Log today ✓</div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">iOS — Shipped</div>
+            <h3>DeskCheck</h3>
+            <p>Tracks office and remote days against your hybrid-work requirement.</p>
+          </div>
+        </a>
+
+        <div class="work-card">
+          <div class="work-stage">
+            <div class="pp-phone">
+              <div class="pp-appname">Brewline</div>
+              <div class="pp-card">
+                <div class="pp-title">Your rewards</div>
+                <div class="pp-stamps">
+                  <span class="pp-stamp filled"></span>
+                  <span class="pp-stamp filled"></span>
+                  <span class="pp-stamp filled"></span>
+                  <span class="pp-stamp filled"></span>
+                  <span class="pp-stamp"></span>
+                </div>
+                <div class="pp-sub">1 stamp to a free coffee</div>
+              </div>
+              <div class="pp-btn">Order ahead →</div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Loyalty</div>
+            <h3>Brewline</h3>
+            <p>Stamp-card loyalty and order-ahead for the neighborhood café.</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-stage">
+            <div class="pp-phone">
+              <div class="pp-appname">TrimTime</div>
+              <div class="pp-card">
+                <div class="pp-title">Saturday, with Marco</div>
+                <div class="pp-chips">
+                  <span class="pp-chip">12:00</span>
+                  <span class="pp-chip">1:15</span>
+                  <span class="pp-chip on">2:30</span>
+                  <span class="pp-chip">4:00</span>
+                </div>
+                <div class="pp-sub">Fade + beard trim · 45 min</div>
+              </div>
+              <div class="pp-btn">Book it</div>
+            </div>
+          </div>
+          <div class="work-body">
+            <div class="work-tag">Concept — Booking</div>
+            <h3>TrimTime</h3>
+            <p>One-tap booking and reminders for barbershops — fewer no-shows.</p>
+          </div>
         </div>
       </div>
     </div>
