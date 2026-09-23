@@ -1,0 +1,17 @@
+URL handle,Title,Description,Vendor,Type,Tags,Published on online store,Option1 name,Option1 value,SKU,Weight value (grams),Inventory tracker,Continue selling when out of stock,Fulfillment service,Price,Requires shipping,Charge tax,Status,Weight unit for display
+barebells-chocolate-dough,Barebells Chocolate Dough Protein Bar,"<p>20g protein, no added sugar, 198 kcal, 7g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-CHOCODOUGH-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-chocolate-dough,,,,,,,,Box of 12,BB-CHOCODOUGH-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-salty-peanut,Barebells Salty Peanut Protein Bar,"<p>20g protein, no added sugar, 203 kcal, 5g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-SALTYPEANUT-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-salty-peanut,,,,,,,,Box of 12,BB-SALTYPEANUT-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-white-chocolate-almond,Barebells White Chocolate Almond Protein Bar,"<p>20g protein, no added sugar, 196 kcal, 6g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-WHITECHOCALMOND-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-white-chocolate-almond,,,,,,,,Box of 12,BB-WHITECHOCALMOND-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-caramel-cashew,Barebells Caramel Cashew Protein Bar,"<p>20g protein, no added sugar, 200 kcal, 6g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-CARAMELCASHEW-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-caramel-cashew,,,,,,,,Box of 12,BB-CARAMELCASHEW-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-cookies-and-cream,Barebells Cookies & Cream Protein Bar,"<p>20g protein, no added sugar, 199 kcal, 7g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-COOKIESCREAM-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-cookies-and-cream,,,,,,,,Box of 12,BB-COOKIESCREAM-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-hazelnut-nougat,Barebells Hazelnut & Nougat Protein Bar,"<p>20g protein, no added sugar, 201 kcal, 5g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-HAZELNUTNOUGAT-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-hazelnut-nougat,,,,,,,,Box of 12,BB-HAZELNUTNOUGAT-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-coconut-chocolate,Barebells Coconut Chocolate Protein Bar,"<p>20g protein, no added sugar, 194 kcal, 6g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-COCONUTCHOCO-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-coconut-chocolate,,,,,,,,Box of 12,BB-COCONUTCHOCO-12,660,,continue,manual,35.88,TRUE,TRUE,,g
+barebells-white-salty-peanut,Barebells White Salty Peanut Protein Bar,"<p>20g protein, no added sugar, 197 kcal, 5g fiber. 55g bar.</p>",Barebells,Protein Bar,"protein bar, barebells, bulk",TRUE,Size,Single Bar,BB-WHITESALTYPEANUT-1,55,,continue,manual,3.29,TRUE,TRUE,active,g
+barebells-white-salty-peanut,,,,,,,,Box of 12,BB-WHITESALTYPEANUT-12,660,,continue,manual,35.88,TRUE,TRUE,,g
