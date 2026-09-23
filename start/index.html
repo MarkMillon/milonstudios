@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Milon Studio</title>
+<meta name="description" content="Tell us what you're building — a website, an app, or an AI system — and we'll get back to you within one business day.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C97B3D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --copper: #C97B3D;
+  --copper-deep: #A86530;
+  --ink: #1F1B16;
+  --ink-soft: rgba(31, 27, 22, 0.6);
+  --paper: #F2EBE0;
+  --paper-deep: #E8DFD0;
+  --pine: #2D4A3E;
+  --rule: rgba(31, 27, 22, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: var(--copper); color: var(--paper); }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+.container-form { max-width: 640px; margin: 0 auto; padding: 0 32px; }
+
+header { padding: 32px 0 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+
+.wordmark { display: inline-flex; align-items: baseline; text-decoration: none; color: var(--ink); gap: 2px; }
+.wm-m { font-family: 'Fraunces', serif; font-size: 38px; font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 1; color: var(--copper); line-height: 1; }
+.wm-rest { font-family: 'Fraunces', serif; font-size: 28px; font-variation-settings: 'opsz' 96, 'SOFT' 50; color: var(--ink); line-height: 1; }
+.wm-suffix {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-left: 14px; padding-left: 14px;
+  border-left: 0.5px solid var(--rule); align-self: center; padding-top: 2px;
+}
+
+.header-nav { display: flex; align-items: center; gap: 26px; }
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 0.5px solid transparent; padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-link:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+.hero { padding: 90px 0 56px; text-align: center; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.hero > .container > * { animation: rise 0.7s ease both; }
+.hero h1 { animation-delay: 0.1s; }
+.hero .hero-lede { animation-delay: 0.25s; }
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 32px;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(42px, 6.5vw, 76px);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  line-height: 1.02; letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 auto 28px; max-width: 16ch;
+}
+
+.hero h1 .accent { font-style: italic; font-weight: 400; color: var(--copper); font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1; }
+
+.hero-lede {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(19px, 2vw, 22px);
+  line-height: 1.4; color: var(--ink-soft);
+  max-width: 44ch; margin: 0 auto;
+}
+
+/* ---------- Form ---------- */
+.form-section { padding: 40px 0 120px; }
+.form-section > .container-form { animation: rise 0.7s ease 0.4s both; }
+
+.intake {
+  background: var(--paper);
+  border: 0.5px solid var(--rule);
+  border-radius: 14px;
+  padding: 48px;
+}
+
+.field { margin-bottom: 28px; }
+
+.field label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.field label .opt { color: var(--ink-soft); letter-spacing: 0.06em; }
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field select,
+.field textarea {
+  width: 100%;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 0.5px solid rgba(31, 27, 22, 0.25);
+  border-radius: 8px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.15s ease;
+  appearance: none;
+}
+
+.field textarea { min-height: 140px; resize: vertical; line-height: 1.55; }
+
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--copper); }
+
+.field ::placeholder { color: rgba(31, 27, 22, 0.35); }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: '↓';
+  position: absolute;
+  right: 16px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-soft);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+/* Service pills */
+.service-pills { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.pill { position: relative; }
+
+.pill input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.pill span {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 0.5px solid rgba(31, 27, 22, 0.25);
+  border-radius: 30px;
+  padding: 11px 22px;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.pill:hover span { border-color: var(--copper); color: var(--copper); }
+
+.pill input:checked + span {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.submit-btn::after { content: '→'; transition: transform 0.2s ease; font-size: 20px; }
+.submit-btn:hover { background: var(--copper); border-color: var(--copper); }
+.submit-btn:hover::after { transform: translateX(4px); }
+
+.form-note {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+/* Thank-you state */
+.thanks {
+  display: none;
+  text-align: center;
+  padding: 60px 32px;
+  background: var(--paper);
+  border: 0.5px solid var(--rule);
+  border-radius: 14px;
+}
+
+.thanks .mark { font-size: 40px; color: var(--copper); margin-bottom: 20px; font-family: 'Fraunces', serif; }
+
+.thanks h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 34px;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.thanks p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 19px; color: var(--ink-soft); margin-bottom: 32px; }
+
+.thanks a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--copper); text-decoration: none;
+  border-bottom: 0.5px solid var(--copper); padding-bottom: 2px;
+}
+
+body.sent .intake, body.sent .hero { display: none; }
+body.sent .thanks { display: block; }
+body.sent .form-section { padding-top: 120px; }
+
+footer { padding: 44px 0; border-top: 0.5px solid var(--rule); }
+
+.footer-inner {
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); text-transform: uppercase;
+}
+
+footer a {
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 0.5px solid var(--rule);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+.footer-right { text-align: right; }
+.footer-sep { display: inline-block; margin: 0 10px; opacity: 0.5; }
+
+@media (max-width: 720px) {
+  .container, .container-form { padding: 0 24px; }
+  header { padding: 24px 0 0; }
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .wm-suffix { display: none; }
+  .hero { padding: 56px 0 40px; }
+  .intake { padding: 32px 24px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="Milon Studio">
+        <span class="wm-m">M</span><span class="wm-rest">ilon</span>
+        <span class="wm-suffix">Studio</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/web/" class="nav-link">Web</a>
+        <a href="/apps/" class="nav-link">Apps</a>
+        <a href="/ai/" class="nav-link">AI</a>
+        <a href="/#work" class="nav-link">Work</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">Start a project</div>
+      <h1>Tell us what you're <span class="accent">building.</span></h1>
+      <p class="hero-lede">A few quick questions — we'll read every word and get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container-form">
+
+      <form class="intake" action="https://formsubmit.co/hi@milonstudio.com" method="POST">
+        <input type="hidden" name="_subject" value="New project inquiry — milonstudios.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://milonstudios.com/start/?sent=1">
+
+        <div class="field">
+          <label>What are you building?</label>
+          <div class="service-pills">
+            <label class="pill">
+              <input type="checkbox" name="service" value="Website" id="svc-web">
+              <span>Website</span>
+            </label>
+            <label class="pill">
+              <input type="checkbox" name="service" value="App" id="svc-app">
+              <span>App</span>
+            </label>
+            <label class="pill">
+              <input type="checkbox" name="service" value="AI" id="svc-ai">
+              <span>AI</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" placeholder="Jamie Rivera" required>
+          </div>
+          <div class="field">
+            <label for="f-biz">Business name <span class="opt">— optional</span></label>
+            <input type="text" id="f-biz" name="business" placeholder="Rivera's Bakery">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone <span class="opt">— optional</span></label>
+            <input type="tel" id="f-phone" name="phone" placeholder="(555) 555-5555">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-budget">Budget <span class="opt">— optional</span></label>
+          <div class="select-wrap">
+            <select id="f-budget" name="budget">
+              <option value="" selected>Not sure yet</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 – $1,000">$500 – $1,000</option>
+              <option value="$1,000 – $2,500">$1,000 – $2,500</option>
+              <option value="$2,500+">$2,500+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Tell us about the project</label>
+          <textarea id="f-msg" name="message" placeholder="What does your business do, and what would you like this to accomplish?" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send it</button>
+        <p class="form-note">Prefer to talk it through? <a href="https://cal.com/milonstudios/15min" style="color: var(--copper);">Book a 15-minute call</a> instead.</p>
+      </form>
+
+      <div class="thanks">
+        <div class="mark">✓</div>
+        <h2>Got it — thank you.</h2>
+        <p>We'll read everything and get back to you within one business day.</p>
+        <a href="/">Back to home →</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        Milon Studio
+        <span class="footer-sep">·</span>
+        <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
+        <span class="footer-sep">·</span>
+        <a href="/web/">Web</a>
+        <span class="footer-sep">·</span>
+        <a href="/apps/">Apps</a>
+        <span class="footer-sep">·</span>
+        <a href="/ai/">AI</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy/">Privacy policies</a>
+      </div>
+      <div class="footer-right">
+        111 John Street, New York, NY 10038
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  // Preselect the service the visitor came from (/start/?service=web|app|ai)
+  var svc = params.get('service');
+  var map = { web: 'svc-web', app: 'svc-app', apps: 'svc-app', ai: 'svc-ai' };
+  if (svc && map[svc]) {
+    var box = document.getElementById(map[svc]);
+    if (box) box.checked = true;
+  }
+
+  // Thank-you state after FormSubmit redirects back
+  if (params.get('sent') === '1') {
+    document.body.classList.add('sent');
+  }
+})();
+</script>
+
+</body>
+</html>

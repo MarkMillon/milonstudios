@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design — Milon Studio</title>
+<meta name="description" content="Fast, modern, mobile-first websites built to turn visitors into customers. One-time pricing, live in about a week.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C97B3D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --copper: #C97B3D;
+  --copper-deep: #A86530;
+  --ink: #1F1B16;
+  --ink-soft: rgba(31, 27, 22, 0.6);
+  --paper: #F2EBE0;
+  --paper-deep: #E8DFD0;
+  --pine: #2D4A3E;
+  --rule: rgba(31, 27, 22, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: var(--copper); color: var(--paper); }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+.container-narrow { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+header { padding: 32px 0 0; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; }
+
+.wordmark { display: inline-flex; align-items: baseline; text-decoration: none; color: var(--ink); gap: 2px; }
+.wm-m { font-family: 'Fraunces', serif; font-size: 38px; font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 1; color: var(--copper); line-height: 1; }
+.wm-rest { font-family: 'Fraunces', serif; font-size: 28px; font-variation-settings: 'opsz' 96, 'SOFT' 50; color: var(--ink); line-height: 1; }
+.wm-suffix {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-left: 14px; padding-left: 14px;
+  border-left: 0.5px solid var(--rule); align-self: center; padding-top: 2px;
+}
+
+.header-nav { display: flex; align-items: center; gap: 26px; }
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 0.5px solid transparent; padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-link:hover, .nav-link.active { color: var(--copper); border-bottom-color: var(--copper); }
+
+.nav-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--paper); background: var(--ink); text-decoration: none;
+  padding: 10px 18px; border-radius: 6px; transition: background 0.15s ease;
+}
+.nav-cta:hover { background: var(--copper); }
+
+.hero { padding: 110px 0 100px; text-align: center; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.hero > .container > * { animation: rise 0.7s ease both; }
+.hero h1 { animation-delay: 0.1s; }
+.hero .hero-lede { animation-delay: 0.25s; }
+.hero .hero-actions { animation-delay: 0.4s; }
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 36px;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(44px, 7vw, 84px);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 30;
+  line-height: 1.02; letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 auto 32px; max-width: 15ch;
+}
+
+.hero h1 .accent { font-style: italic; font-weight: 400; color: var(--copper); font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1; }
+
+.hero-lede {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.4; color: var(--ink-soft);
+  max-width: 42ch; margin: 0 auto 48px;
+}
+
+.hero-actions { display: flex; justify-content: center; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+.cta-button {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--ink); color: var(--paper);
+  font-family: 'Fraunces', serif; font-size: 18px;
+  padding: 20px 36px; border-radius: 6px; text-decoration: none;
+  transition: all 0.2s ease; border: 1px solid var(--ink); cursor: pointer;
+}
+.cta-button::after { content: '→'; transition: transform 0.2s ease; font-size: 20px; }
+.cta-button:hover { background: var(--copper); border-color: var(--copper); }
+.cta-button:hover::after { transform: translateX(4px); }
+.cta-button.secondary { background: transparent; color: var(--ink); }
+.cta-button.secondary:hover { background: var(--ink); color: var(--paper); }
+
+.section { padding: 110px 0; border-top: 0.5px solid var(--rule); }
+
+.section-heading { text-align: center; max-width: 620px; margin: 0 auto 72px; }
+.section-heading .kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 20px;
+}
+.section-heading h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(34px, 4.5vw, 50px);
+  font-weight: 300; font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  line-height: 1.08; letter-spacing: -0.02em; color: var(--ink);
+}
+.section-heading h2 em { font-style: italic; color: var(--copper); font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1; }
+.section-heading .section-sub {
+  margin-top: 16px;
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: 19px; color: var(--ink-soft);
+}
+
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 56px; }
+
+.feature { border-top: 0.5px solid var(--rule); padding-top: 26px; }
+.feature-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 16px;
+}
+.feature h3 {
+  font-family: 'Fraunces', serif; font-size: 24px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink); line-height: 1.2; margin-bottom: 12px;
+}
+.feature p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+
+.step { text-align: left; border-top: 0.5px solid var(--rule); padding-top: 26px; }
+.step-num {
+  font-family: 'Fraunces', serif; font-size: 40px; font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--copper); margin-bottom: 14px; line-height: 1;
+}
+.step h3 {
+  font-family: 'Fraunces', serif; font-size: 22px;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink); margin-bottom: 10px;
+}
+.step p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+
+.pricing-card {
+  border: 0.5px solid var(--rule); border-radius: 14px;
+  padding: 40px 32px; position: relative; background: var(--paper);
+  text-align: left; transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.pricing-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+.pricing-card.featured { border-color: var(--copper); background: var(--paper-deep); }
+
+.pricing-tag {
+  position: absolute; top: -12px; left: 32px;
+  background: var(--copper); color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+}
+
+.pricing-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--copper); margin-bottom: 14px;
+}
+
+.pricing-price {
+  font-family: 'Fraunces', serif; font-size: 46px; font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--ink); letter-spacing: -0.02em; margin-bottom: 12px;
+}
+
+.pricing-desc { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 28px; }
+
+.pricing-cta {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 0.5px solid var(--ink); padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.pricing-cta:hover { color: var(--copper); border-color: var(--copper); }
+
+.cta-section { text-align: center; padding: 130px 0; }
+
+.cta-headline {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(38px, 5.5vw, 60px);
+  font-weight: 300; font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  line-height: 1.05; letter-spacing: -0.02em; color: var(--ink);
+  margin: 0 auto 22px; max-width: 18ch;
+}
+.cta-headline em { font-style: italic; color: var(--copper); font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1; }
+
+.cta-sub {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px; font-style: italic; color: var(--ink-soft);
+  margin-bottom: 44px;
+}
+
+.cta-detail {
+  margin-top: 26px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+footer { padding: 44px 0; border-top: 0.5px solid var(--rule); }
+
+.footer-inner {
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); text-transform: uppercase;
+}
+
+footer a {
+  color: var(--ink-soft); text-decoration: none;
+  border-bottom: 0.5px solid var(--rule);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
+
+.footer-right { text-align: right; }
+.footer-sep { display: inline-block; margin: 0 10px; opacity: 0.5; }
+
+@media (max-width: 940px) {
+  .feature-grid { grid-template-columns: 1fr; gap: 36px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 36px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+}
+
+@media (max-width: 720px) {
+  .container, .container-narrow { padding: 0 24px; }
+  header { padding: 24px 0 0; }
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .wm-suffix { display: none; }
+  .hero { padding: 64px 0 64px; }
+  .section { padding: 72px 0; }
+  .section-heading { margin-bottom: 48px; }
+  .cta-section { padding: 88px 0; }
+  .cta-button { padding: 17px 30px; font-size: 17px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="Milon Studio">
+        <span class="wm-m">M</span><span class="wm-rest">ilon</span>
+        <span class="wm-suffix">Studio</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="/#work" class="nav-link">Work</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="/start/?service=web" class="nav-cta">Get Started</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">Web Design</div>
+      <h1>Websites that <span class="accent">convert.</span></h1>
+      <p class="hero-lede">Fast, modern, mobile-first websites built to turn visitors into customers — live in about a week.</p>
+      <div class="hero-actions">
+        <a href="/start/?service=web" class="cta-button">Start a Project</a>
+        <a href="#pricing" class="cta-button secondary">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">What's included</div>
+        <h2>Built to work, not just to <em>look good.</em></h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-num">01 — Mobile-first</div>
+          <h3>Right on every screen</h3>
+          <p>Most of your visitors are on a phone. Every page is designed for the small screen first, then scales up beautifully.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">02 — Speed</div>
+          <h3>Loads before they blink</h3>
+          <p>No bloated builders, no plugin soup. Hand-built pages that load instantly — because slow sites lose customers.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">03 — Found on Google</div>
+          <h3>Search-ready from day one</h3>
+          <p>Clean structure, proper metadata, and the SEO fundamentals done right, so your neighborhood can actually find you.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-num">04 — Conversion</div>
+          <h3>Visitors become customers</h3>
+          <p>Clear calls to action, easy contact, one obvious next step on every page. A website that sells while you sleep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">How it works</div>
+        <h2>Live in about a <em>week.</em></h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Kickoff</h3>
+          <p>One call to capture your brand, your offers, and your voice. No homework, no fifty-question form.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Build</h3>
+          <p>We design and build; you review a live preview and tell us what to change. Usually two rounds is all it takes.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Launch</h3>
+          <p>Live on your domain. We handle hosting, updates, and fixes — you keep running the business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">Pricing</div>
+        <h2>Simple, one-time <em>pricing.</em></h2>
+        <p class="section-sub">No retainers, no surprises.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$349</div>
+          <p class="pricing-desc">A one-page website — clean, fast, and built to convert. Live in about a week.</p>
+          <a href="/start/?service=web" class="pricing-cta">Get started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-tag">Most popular</div>
+          <div class="pricing-name">Business</div>
+          <div class="pricing-price">$649</div>
+          <p class="pricing-desc">Up to five pages — everything a growing business needs. Live in two weeks.</p>
+          <a href="/start/?service=web" class="pricing-cta">Get started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">$999</div>
+          <p class="pricing-desc">Up to eight pages with dedicated post-launch support and tuning.</p>
+          <a href="/start/?service=web" class="pricing-cta">Get started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="contact">
+    <div class="container-narrow">
+      <h2 class="cta-headline">Let's build your <em>website.</em></h2>
+      <p class="cta-sub">Fifteen minutes. No deck, no pitch, no follow-up sequence.</p>
+      <a href="https://cal.com/milonstudios/15min" class="cta-button">Book a call</a>
+      <div class="cta-detail">Or email hi@milonstudio.com</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        Milon Studio
+        <span class="footer-sep">·</span>
+        <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
+        <span class="footer-sep">·</span>
+        <a href="/web/">Web</a>
+        <span class="footer-sep">·</span>
+        <a href="/apps/">Apps</a>
+        <span class="footer-sep">·</span>
+        <a href="/ai/">AI</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy/">Privacy policies</a>
+      </div>
+      <div class="footer-right">
+        111 John Street, New York, NY 10038
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

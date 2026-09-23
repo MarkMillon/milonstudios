@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milon Studio — Apps that ship in two weeks.</title>
-<meta name="description" content="Custom mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you own, and compete with the chains.">
+<title>Milon Studio — Websites, Apps &amp; AI for Small Businesses</title>
+<meta name="description" content="Custom websites, mobile apps, and AI automation for small businesses ready to grow. One studio, three ways to grow online.">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -23,7 +23,7 @@
   --copper: #C97B3D;
   --copper-deep: #A86530;
   --ink: #1F1B16;
-  --ink-soft: rgba(31, 27, 22, 0.65);
+  --ink-soft: rgba(31, 27, 22, 0.6);
   --paper: #F2EBE0;
   --paper-deep: #E8DFD0;
   --pine: #2D4A3E;
@@ -46,9 +46,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-image:
-    radial-gradient(circle at 25% 20%, rgba(201, 123, 61, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 75% 80%, rgba(45, 74, 62, 0.03) 0%, transparent 50%);
 }
 
 body::before {
@@ -56,7 +53,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.35;
   z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -64,7 +61,7 @@ body::before {
 main, header, footer { position: relative; z-index: 1; }
 
 .container {
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -75,6 +72,7 @@ main, header, footer { position: relative; z-index: 1; }
   padding: 0 32px;
 }
 
+/* ---------- Header ---------- */
 header { padding: 32px 0 0; }
 
 .header-inner {
@@ -126,7 +124,7 @@ header { padding: 32px 0 0; }
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
 
 .nav-link {
@@ -146,31 +144,34 @@ header { padding: 32px 0 0; }
   border-bottom-color: var(--copper);
 }
 
-.header-meta {
+.nav-cta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--ink-soft);
   text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
 }
 
-.header-meta .dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--copper);
-  margin-right: 8px;
-  vertical-align: middle;
-  animation: pulse 2s ease-in-out infinite;
+.nav-cta:hover { background: var(--copper); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 130px 0 120px; text-align: center; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.hero { padding: 96px 0 80px; position: relative; }
+.hero > .container > * { animation: rise 0.7s ease both; }
+.hero .hero-eyebrow { animation-delay: 0.05s; }
+.hero h1 { animation-delay: 0.15s; }
+.hero .hero-lede { animation-delay: 0.3s; }
+.hero .hero-actions { animation-delay: 0.45s; }
 
 .hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
@@ -178,29 +179,18 @@ header { padding: 32px 0 0; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--copper);
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 32px;
-  height: 0.5px;
-  background: var(--copper);
+  margin-bottom: 40px;
 }
 
 .hero h1 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(56px, 9vw, 112px);
+  font-size: clamp(48px, 8vw, 96px);
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 30;
-  line-height: 0.95;
+  line-height: 1.02;
   letter-spacing: -0.03em;
   color: var(--ink);
-  margin-bottom: 40px;
+  margin: 0 auto 36px;
   max-width: 14ch;
 }
 
@@ -213,222 +203,494 @@ header { padding: 32px 0 0; }
 
 .hero-lede {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(22px, 2.5vw, 28px);
+  font-size: clamp(20px, 2.2vw, 24px);
   font-weight: 400;
-  line-height: 1.35;
-  color: var(--ink);
-  max-width: 36ch;
-  margin-bottom: 56px;
-}
-
-/* STATS — now the centerpiece of the hero */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 0.5px solid var(--rule);
-  border-bottom: 0.5px solid var(--rule);
-  padding: 32px 0;
-}
-
-.stat {
-  padding: 0 32px;
-  border-right: 0.5px solid var(--rule);
-}
-
-.stat:last-child { border-right: none; }
-.stat:first-child { padding-left: 0; }
-
-.stat-value {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5vw, 56px);
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.stat-value .unit {
-  font-family: 'Instrument Serif', serif;
-  font-size: 0.5em;
-  font-style: italic;
-  color: var(--copper);
-  font-weight: 400;
-  margin-left: 4px;
-}
-
-.stat-label {
-  font-family: 'Fraunces', serif;
-  font-size: 15px;
   line-height: 1.4;
-  color: var(--ink);
-  margin-bottom: 8px;
-  max-width: 28ch;
-}
-
-.stat-source {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-soft);
+  max-width: 40ch;
+  margin: 0 auto 52px;
 }
 
-.content-section {
-  padding: 96px 0;
-  border-bottom: 0.5px solid var(--rule);
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
-.section-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 64px;
-  align-items: start;
+/* ---------- Buttons ---------- */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--ink);
+  cursor: pointer;
 }
 
-.section-number {
+.cta-button::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 20px;
+}
+
+.cta-button:hover { background: var(--copper); border-color: var(--copper); }
+.cta-button:hover::after { transform: translateX(4px); }
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.cta-button.secondary:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 110px 0;
+  border-top: 0.5px solid var(--rule);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 72px;
+}
+
+.section-heading .kicker {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--copper);
-  padding-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  margin-bottom: 20px;
 }
 
-.section-number .num {
+.section-heading h2 {
   font-family: 'Fraunces', serif;
-  font-size: 14px;
-  color: var(--ink-soft);
-  letter-spacing: 0;
-}
-
-.section-content h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(34px, 4.5vw, 48px);
+  font-size: clamp(34px, 4.5vw, 50px);
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 28px;
-  max-width: 20ch;
 }
 
-.section-content h2 em {
+.section-heading h2 em {
   font-style: italic;
   color: var(--copper);
   font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
 }
 
-.section-content p {
-  font-family: 'Fraunces', serif;
+.section-heading .section-sub {
+  margin-top: 16px;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
   font-size: 19px;
-  font-weight: 400;
-  font-variation-settings: 'opsz' 14, 'SOFT' 30;
-  line-height: 1.65;
-  color: var(--ink);
-  max-width: 58ch;
+  color: var(--ink-soft);
 }
 
-.section-content p + p { margin-top: 16px; }
-
-/* Inline feature highlights */
-.feature-grid {
-  margin-top: 36px;
+/* ---------- Services ---------- */
+.services-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 48px;
-  max-width: 640px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
 }
 
-.feature {
+.service {
+  display: block;
+  text-align: left;
   border-top: 0.5px solid var(--rule);
-  padding-top: 20px;
+  padding-top: 28px;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
 }
 
-.feature-label {
+.service:hover { border-top-color: var(--copper); }
+.service:hover h3 { color: var(--copper); }
+
+.service-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.service-more .arrow { transition: transform 0.2s ease; }
+.service:hover .service-more .arrow { transform: translateX(4px); }
+
+.service-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  transition: color 0.2s ease;
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.service p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+/* ---------- Work carousel ---------- */
+.carousel { position: relative; }
+
+.car-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 4px 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.car-track::-webkit-scrollbar { display: none; }
+
+.car-slide {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid var(--rule);
+  border-radius: 14px;
+  background: var(--paper);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.car-slide:hover {
+  transform: translateY(-5px);
+  border-color: var(--copper);
+}
+
+.car-stage {
+  height: 210px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+/* Mini phone */
+.pp-phone {
+  width: 146px;
+  border: 6px solid var(--ink);
+  border-bottom: none;
+  border-radius: 24px 24px 0 0;
+  background: var(--paper);
+  padding: 22px 11px 0;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.car-slide:hover .pp-phone { transform: translateY(-5px); }
+
+.pp-phone::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  border-radius: 3px;
+  background: var(--ink);
+  opacity: 0.4;
+}
+
+.pp-appname {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.pp-card {
+  background: var(--paper-deep);
+  border: 0.5px solid var(--rule);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.pp-title { font-family: 'Fraunces', serif; font-size: 12px; color: var(--ink); margin-bottom: 6px; }
+.pp-sub { font-family: 'Fraunces', serif; font-size: 9px; color: var(--ink-soft); }
+
+.pp-days { display: flex; gap: 5px; margin-bottom: 7px; }
+
+.pp-day {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--pine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px;
+  color: var(--pine);
+}
+
+.pp-day.filled { background: var(--pine); color: var(--paper); }
+
+.pp-product {
+  height: 40px;
+  border-radius: 6px;
+  background: var(--copper);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.pp-row { display: flex; justify-content: space-between; align-items: baseline; }
+.pp-price { font-family: 'Fraunces', serif; font-size: 13px; color: var(--ink); }
+
+.pp-btn {
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.pp-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
+
+.pp-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5px;
+  padding: 4px 7px;
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+.pp-chip.on { background: var(--pine); border-color: var(--pine); color: var(--paper); }
+
+.pp-stamps { display: flex; gap: 4px; margin-bottom: 6px; }
+
+.pp-stamp { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--copper); }
+.pp-stamp.filled { background: var(--copper); }
+
+.car-body { padding: 24px 26px 28px; text-align: left; }
+
+.car-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--copper);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.feature h3 {
+.car-body h3 {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 400;
   font-variation-settings: 'opsz' 96, 'SOFT' 50;
   color: var(--ink);
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.feature p {
+.car-body p {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.car-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.car-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0.5px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.car-dots { display: flex; gap: 8px; }
+
+.car-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rule);
+  transition: background 0.2s ease;
+}
+
+.car-dot.active { background: var(--copper); }
+
+/* ---------- Pricing ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.pricing-card {
+  border: 0.5px solid var(--rule);
+  border-radius: 14px;
+  padding: 40px 32px;
+  position: relative;
+  background: var(--paper);
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pricing-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+
+.pricing-card.featured {
+  border-color: var(--copper);
+  background: var(--paper-deep);
+}
+
+.pricing-tag {
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--copper);
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.pricing-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 14px;
+}
+
+.pricing-price {
+  font-family: 'Fraunces', serif;
+  font-size: 46px;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.pricing-desc {
   font-family: 'Fraunces', serif;
   font-size: 16px;
   line-height: 1.55;
   color: var(--ink-soft);
+  margin-bottom: 28px;
 }
 
-/* Inline stat callout */
-.stat-callout {
-  margin: 32px 0 0;
-  padding: 24px 28px;
-  background: var(--paper-deep);
-  border-left: 3px solid var(--copper);
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 560px;
-}
-
-.stat-callout-value {
-  font-family: 'Fraunces', serif;
-  font-size: 40px;
-  font-weight: 300;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  line-height: 1;
-  color: var(--copper);
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
-}
-
-.stat-callout-text {
-  font-family: 'Instrument Serif', serif;
-  font-size: 18px;
-  font-style: italic;
-  line-height: 1.4;
+.pricing-cta {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--ink);
-  flex: 1;
-  min-width: 200px;
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--ink);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.founder {
-  padding: 96px 0 64px;
-  background: var(--paper-deep);
-  border-bottom: 0.5px solid var(--rule);
+.pricing-cta:hover { color: var(--copper); border-color: var(--copper); }
+
+.pricing-note {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-soft);
 }
 
-.founder-quote {
+.pricing-note a {
+  color: var(--copper);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--copper);
+}
+
+/* ---------- About ---------- */
+.about { background: var(--paper-deep); }
+
+.about-quote {
   font-family: 'Instrument Serif', Georgia, serif;
   font-size: clamp(26px, 3.5vw, 38px);
   font-weight: 400;
   line-height: 1.3;
   color: var(--ink);
-  max-width: 24ch;
+  max-width: 26ch;
   font-style: italic;
   position: relative;
 }
 
-.founder-quote::before {
+.about-quote::before {
   content: '"';
   position: absolute;
   left: -0.5em;
@@ -439,19 +701,18 @@ header { padding: 32px 0 0; }
   font-family: 'Fraunces', serif;
 }
 
-.founder-body { margin-top: 40px; max-width: 56ch; }
+.about-body { margin-top: 36px; max-width: 56ch; }
 
-.founder-body p {
+.about-body p {
   font-family: 'Fraunces', serif;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink);
 }
 
-.founder-body p + p { margin-top: 14px; }
+.about-body p + p { margin-top: 14px; }
 
-.founder-sig {
+.about-sig {
   margin-top: 32px;
   font-family: 'Instrument Serif', serif;
   font-style: italic;
@@ -459,31 +720,19 @@ header { padding: 32px 0 0; }
   color: var(--copper);
 }
 
-.cta-section {
-  padding: 120px 0;
-  text-align: center;
-  position: relative;
-}
-
-.cta-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 24px;
-}
+/* ---------- CTA ---------- */
+.cta-section { text-align: center; padding: 130px 0; }
 
 .cta-headline {
   font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5.5vw, 64px);
+  font-size: clamp(38px, 5.5vw, 60px);
   font-weight: 300;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 24px;
-  max-width: 16ch;
+  margin-bottom: 22px;
+  max-width: 18ch;
   margin-left: auto;
   margin-right: auto;
 }
@@ -499,39 +748,11 @@ header { padding: 32px 0 0; }
   font-size: 20px;
   font-style: italic;
   color: var(--ink-soft);
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: 'Fraunces', serif;
-  font-size: 19px;
-  font-weight: 400;
-  padding: 22px 40px;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.cta-button::after {
-  content: '→';
-  display: inline-block;
-  transition: transform 0.2s ease;
-  font-size: 22px;
-}
-
-.cta-button:hover { background: var(--copper); }
-.cta-button:hover::after { transform: translateX(4px); }
 
 .cta-detail {
-  margin-top: 28px;
+  margin-top: 26px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -539,10 +760,10 @@ header { padding: 32px 0 0; }
   color: var(--ink-soft);
 }
 
+/* ---------- Footer ---------- */
 footer {
-  padding: 48px 0;
+  padding: 44px 0;
   border-top: 0.5px solid var(--rule);
-  background: var(--paper-deep);
 }
 
 .footer-inner {
@@ -574,30 +795,23 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
   opacity: 0.5;
 }
 
+/* ---------- Responsive ---------- */
+@media (max-width: 940px) {
+  .services-grid { grid-template-columns: 1fr; gap: 40px; max-width: 480px; margin: 0 auto; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+}
+
 @media (max-width: 720px) {
   .container, .container-narrow { padding: 0 24px; }
   header { padding: 24px 0 0; }
-  .header-meta { display: none; }
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
   .wm-suffix { display: none; }
-  .hero { padding: 64px 0 56px; }
-  .hero-eyebrow { margin-bottom: 24px; }
-  .hero h1 { margin-bottom: 28px; max-width: none; }
-  .hero-lede { margin-bottom: 40px; }
-  .stats-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
-  .stat { padding: 24px 0; border-right: none; border-bottom: 0.5px solid var(--rule); }
-  .stat:last-child { border-bottom: none; }
-  .stat:first-child { padding-top: 24px; }
-  .stat-value { font-size: 44px; }
-  .section-grid { grid-template-columns: 1fr; gap: 24px; }
-  .section-number { padding-top: 0; }
-  .content-section { padding: 64px 0; }
-  .feature-grid { grid-template-columns: 1fr; gap: 24px; }
-  .stat-callout { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .stat-callout-value { font-size: 36px; }
-  .founder { padding: 64px 0 48px; }
-  .founder-quote { font-size: 28px; }
-  .cta-section { padding: 80px 0; }
-  .cta-button { padding: 18px 32px; font-size: 17px; }
+  .hero { padding: 72px 0 72px; }
+  .section { padding: 72px 0; }
+  .section-heading { margin-bottom: 48px; }
+  .cta-section { padding: 88px 0; }
+  .cta-button { padding: 17px 30px; font-size: 17px; }
   .footer-inner { grid-template-columns: 1fr; gap: 16px; }
   .footer-right { text-align: left; }
 }
@@ -613,7 +827,11 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
         <span class="wm-suffix">Studio</span>
       </a>
       <nav class="header-nav">
-        <a href="/portfolio/" class="nav-link">Portfolio</a>
+        <a href="/web/" class="nav-link">Web</a>
+        <a href="/apps/" class="nav-link">Apps</a>
+        <a href="/ai/" class="nav-link">AI</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="https://cal.com/milonstudios/15min" class="nav-cta">Book a call</a>
       </nav>
     </div>
   </div>
@@ -622,140 +840,214 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
 <main>
   <section class="hero">
     <div class="container">
-      <div class="hero-eyebrow">An app studio for small businesses</div>
-      <h1>Your shop deserves an app of its <span class="accent">own.</span></h1>
-      <p class="hero-lede">Mobile apps for the small businesses that built your block. Drive repeat visits, build a customer list you actually own, and compete with the chains — without the chain-store price tag.</p>
-
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value">67<span class="unit">%</span></div>
-          <div class="stat-label">More repeat visits from app-using customers vs. non-app customers</div>
-          <div class="stat-source">Bond Loyalty Report</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">3.5<span class="unit">×</span></div>
-          <div class="stat-label">Higher engagement on push notifications than email marketing</div>
-          <div class="stat-source">Localytics</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">82<span class="unit">%</span></div>
-          <div class="stat-label">Of consumers prefer shopping at businesses that have a mobile app</div>
-          <div class="stat-source">Statista, 2024</div>
-        </div>
+      <div class="hero-eyebrow">A digital studio for small businesses</div>
+      <h1>One studio. Three ways to <span class="accent">grow.</span></h1>
+      <p class="hero-lede">Websites, apps, and AI for the small businesses that built your block.</p>
+      <div class="hero-actions">
+        <a href="https://cal.com/milonstudios/15min" class="cta-button">Start a Project</a>
+        <a href="#work" class="cta-button secondary">See Our Work</a>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="section" id="services">
     <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">01</span>
-          The problem
-        </div>
-        <div class="section-content">
-          <h2>The chains have apps. <em>You don't.</em></h2>
-          <p>Every Starbucks regular has the Starbucks app. Every Sweetgreen customer has the Sweetgreen app. They open it, tap their order, walk in, pick it up. Their loyalty points pile up. They come back more often, spend more per visit, and never have to remember a phone number.</p>
-          <p>Independent shops have been locked out of this — not because the technology is hard, but because building a real app has cost six figures and six months. Until now.</p>
-        </div>
+      <div class="section-heading">
+        <div class="kicker">What we do</div>
+        <h2>Web. Apps. <em>AI.</em></h2>
+      </div>
+
+      <div class="services-grid">
+        <a href="/web/" class="service">
+          <div class="service-num">01 — Web Design</div>
+          <h3>Websites that convert</h3>
+          <p>Fast, modern, mobile-first websites built to turn visitors into customers — not just look good on a screen.</p>
+          <span class="service-more">Explore Web Design <span class="arrow">→</span></span>
+        </a>
+        <a href="/apps/" class="service">
+          <div class="service-num">02 — Apps</div>
+          <h3>Apps your customers use</h3>
+          <p>iOS and Android apps with loyalty, ordering, and push notifications — live in two weeks, not two quarters.</p>
+          <span class="service-more">Explore Apps <span class="arrow">→</span></span>
+        </a>
+        <a href="/ai/" class="service">
+          <div class="service-num">03 — AI</div>
+          <h3>AI that never sleeps</h3>
+          <p>Chatbots, automated booking, and back-office copilots trained on your business — so nothing falls through the cracks.</p>
+          <span class="service-more">Explore AI <span class="arrow">→</span></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="section" id="work">
     <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">02</span>
-          What it does
-        </div>
-        <div class="section-content">
-          <h2>A real app. <em>Yours.</em></h2>
-          <p>iOS and Android, branded entirely to your shop. Your colors, your menu, your logo on every customer's home screen. Not a white-label template that twenty other shops are using — yours.</p>
+      <div class="section-heading">
+        <div class="kicker">Recent work</div>
+        <h2>Apps we've <em>made.</em></h2>
+      </div>
 
-          <div class="feature-grid">
-            <div class="feature">
-              <div class="feature-label">Loyalty</div>
-              <h3>Stars, points, free drinks.</h3>
-              <p>Reward regulars automatically. No punch cards to lose, no phone numbers to type. Customers earn just by ordering.</p>
+      <div class="carousel">
+        <div class="car-track" id="carTrack">
+
+          <a href="/privacy/deskcheck.html" class="car-slide">
+            <div class="car-stage">
+              <div class="pp-phone">
+                <div class="pp-appname">DeskCheck</div>
+                <div class="pp-card">
+                  <div class="pp-title">This week</div>
+                  <div class="pp-days">
+                    <span class="pp-day filled">M</span>
+                    <span class="pp-day filled">T</span>
+                    <span class="pp-day filled">W</span>
+                    <span class="pp-day">T</span>
+                    <span class="pp-day">F</span>
+                  </div>
+                  <div class="pp-sub">3 of 3 office days — you're set</div>
+                </div>
+                <div class="pp-btn">Log today ✓</div>
+              </div>
             </div>
-            <div class="feature">
-              <div class="feature-label">Mobile ordering</div>
-              <h3>Skip the line.</h3>
-              <p>Order ahead, pay in-app, pick up at the counter. Frictionless for them, faster throughput for you.</p>
+            <div class="car-body">
+              <div class="car-tag">iOS — Shipped</div>
+              <h3>DeskCheck</h3>
+              <p>Tracks office and remote days against your hybrid-work requirement.</p>
             </div>
-            <div class="feature">
-              <div class="feature-label">Push notifications</div>
-              <h3>Reach customers directly.</h3>
-              <p>New seasonal drink? Rainy-day promo? Send a notification. No Instagram algorithm in the way.</p>
+          </a>
+
+          <a href="/barbell-bulk-store/" class="car-slide">
+            <div class="car-stage">
+              <div class="pp-phone">
+                <div class="pp-appname">StrengthFuel</div>
+                <div class="pp-card">
+                  <div class="pp-product">Protein bar</div>
+                  <div class="pp-title">Cookies &amp; Cream · 12-pack</div>
+                  <div class="pp-row">
+                    <span class="pp-price">$29</span>
+                    <span class="pp-sub">In stock</span>
+                  </div>
+                </div>
+                <div class="pp-btn">Add to cart</div>
+              </div>
             </div>
-            <div class="feature">
-              <div class="feature-label">Customer list</div>
-              <h3>The data is yours.</h3>
-              <p>Names, emails, order history, preferences — owned by you, not by a third-party platform that could change the rules tomorrow.</p>
+            <div class="car-body">
+              <div class="car-tag">Storefront — Live</div>
+              <h3>StrengthFuel</h3>
+              <p>A bulk protein-bar storefront with Shopify checkout.</p>
+            </div>
+          </a>
+
+          <div class="car-slide">
+            <div class="car-stage">
+              <div class="pp-phone">
+                <div class="pp-appname">Brewline</div>
+                <div class="pp-card">
+                  <div class="pp-title">Your rewards</div>
+                  <div class="pp-stamps">
+                    <span class="pp-stamp filled"></span>
+                    <span class="pp-stamp filled"></span>
+                    <span class="pp-stamp filled"></span>
+                    <span class="pp-stamp filled"></span>
+                    <span class="pp-stamp"></span>
+                  </div>
+                  <div class="pp-sub">1 stamp to a free coffee</div>
+                </div>
+                <div class="pp-btn">Order ahead →</div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-tag">Concept — Loyalty</div>
+              <h3>Brewline</h3>
+              <p>Stamp-card loyalty and order-ahead for the neighborhood café.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="content-section">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">03</span>
-          Why it works
-        </div>
-        <div class="section-content">
-          <h2>Regulars buy more, <em>more often.</em></h2>
-          <p>The math is simple. A loyalty member visits more often than a one-time customer. They spend more per visit. They tell their friends. An app on their phone makes them a member without the friction of a paper punch card or a "what's your phone number" awkward exchange at the register.</p>
-
-          <div class="stat-callout">
-            <div class="stat-callout-value">+20%</div>
-            <div class="stat-callout-text">Average increase in revenue from a well-implemented loyalty program, across food &amp; retail</div>
+          <div class="car-slide">
+            <div class="car-stage">
+              <div class="pp-phone">
+                <div class="pp-appname">TrimTime</div>
+                <div class="pp-card">
+                  <div class="pp-title">Saturday, with Marco</div>
+                  <div class="pp-chips">
+                    <span class="pp-chip">12:00</span>
+                    <span class="pp-chip">1:15</span>
+                    <span class="pp-chip on">2:30</span>
+                    <span class="pp-chip">4:00</span>
+                  </div>
+                  <div class="pp-sub">Fade + beard trim · 45 min</div>
+                </div>
+                <div class="pp-btn">Book it</div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-tag">Concept — Booking</div>
+              <h3>TrimTime</h3>
+              <p>One-tap booking and reminders for barbershops — fewer no-shows.</p>
+            </div>
           </div>
 
-          <p style="margin-top: 24px;">Multiply that across a year of regulars and the app becomes one of the highest-ROI investments a small shop can make. The technology is the easy part. The hard part — knowing what to build and what to leave out — is what we do.</p>
+        </div>
+
+        <div class="car-nav">
+          <button class="car-btn" id="carPrev" aria-label="Previous">←</button>
+          <div class="car-dots" id="carDots"></div>
+          <button class="car-btn" id="carNext" aria-label="Next">→</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="section" id="pricing">
     <div class="container">
-      <div class="section-grid">
-        <div class="section-number">
-          <span class="num">04</span>
-          How we work
+      <div class="section-heading">
+        <div class="kicker">Pricing</div>
+        <h2>Simple, one-time <em>pricing.</em></h2>
+        <p class="section-sub">No retainers, no surprises.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$349</div>
+          <p class="pricing-desc">A one-page website — clean, fast, and built to convert. Live in about a week.</p>
+          <a href="https://cal.com/milonstudios/15min" class="pricing-cta">Get started</a>
         </div>
-        <div class="section-content">
-          <h2>Two weeks, <em>not two quarters.</em></h2>
-          <p>Week one we capture your brand, your menu, your offers, your voice. Week two we build, test, and submit to the App Store.</p>
-          <p>Day fifteen your customers download it. We handle the App Store review, the hosting, the updates, the bug fixes — all of it. You keep running the shop.</p>
+        <div class="pricing-card featured">
+          <div class="pricing-tag">Most popular</div>
+          <div class="pricing-name">Business</div>
+          <div class="pricing-price">$649</div>
+          <p class="pricing-desc">Up to five pages — everything a growing business needs. Live in two weeks.</p>
+          <a href="https://cal.com/milonstudios/15min" class="pricing-cta">Get started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">$999</div>
+          <p class="pricing-desc">Up to eight pages with dedicated post-launch support and tuning.</p>
+          <a href="https://cal.com/milonstudios/15min" class="pricing-cta">Get started</a>
         </div>
       </div>
+
+      <p class="pricing-note">Building an app or an AI system? Those are scoped per project — <a href="https://cal.com/milonstudios/15min">let's talk</a>.</p>
     </div>
   </section>
 
-  <section class="founder">
+  <section class="section about" id="about">
     <div class="container-narrow">
-      <p class="founder-quote">Indie shops deserve the same software the chains use — without the price tag or the six-month build.</p>
+      <p class="about-quote">Small businesses deserve the same software the chains use — without the price tag or the six-month build.</p>
 
-      <div class="founder-body">
-        <p>We started Milon Studio because every "small business app" we'd seen was either a glorified punch card or a six-month consulting engagement priced for venture capital.</p>
-        <p>We work with one shop at a time, and you'll deal with the team directly from kickoff to launch. If your shop is on a block we'd walk down on a Saturday, you're who we built this for.</p>
+      <div class="about-body">
+        <p>We work with one business at a time — website, app, or AI, whichever you need — and you'll deal with the team directly from kickoff to launch.</p>
+        <p>If your shop is on a block we'd walk down on a Saturday, you're who we built this for.</p>
       </div>
 
-      <div class="founder-sig">— The Milon Studio team</div>
+      <div class="about-sig">— The Milon Studio team</div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <section class="section cta-section" id="contact">
     <div class="container-narrow">
-      <div class="cta-eyebrow">— Fifteen minutes —</div>
-      <h2 class="cta-headline">See the app on a screen, then <em>decide.</em></h2>
-      <p class="cta-sub">No deck. No pitch. No follow-up sequence.</p>
+      <h2 class="cta-headline">Let's talk about your <em>project.</em></h2>
+      <p class="cta-sub">Fifteen minutes. No deck, no pitch, no follow-up sequence.</p>
       <a href="https://cal.com/milonstudios/15min" class="cta-button">Book a call</a>
       <div class="cta-detail">Or email hi@milonstudio.com</div>
     </div>
@@ -770,6 +1062,12 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
         <span class="footer-sep">·</span>
         <a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a>
         <span class="footer-sep">·</span>
+        <a href="/web/">Web</a>
+        <span class="footer-sep">·</span>
+        <a href="/apps/">Apps</a>
+        <span class="footer-sep">·</span>
+        <a href="/ai/">AI</a>
+        <span class="footer-sep">·</span>
         <a href="/portfolio/">Portfolio</a>
         <span class="footer-sep">·</span>
         <a href="/privacy/">Privacy policies</a>
@@ -780,6 +1078,39 @@ footer a:hover { color: var(--copper); border-bottom-color: var(--copper); }
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var track = document.getElementById('carTrack');
+  var dotsWrap = document.getElementById('carDots');
+  var slides = track.children;
+  var step = function () { return slides[0].offsetWidth + 24; };
+
+  for (var i = 0; i < slides.length; i++) {
+    var d = document.createElement('span');
+    d.className = 'car-dot' + (i === 0 ? ' active' : '');
+    dotsWrap.appendChild(d);
+  }
+
+  function updateDots() {
+    var idx = Math.round(track.scrollLeft / step());
+    idx = Math.max(0, Math.min(idx, slides.length - 1));
+    for (var i = 0; i < dotsWrap.children.length; i++) {
+      dotsWrap.children[i].classList.toggle('active', i === idx);
+    }
+  }
+
+  document.getElementById('carPrev').addEventListener('click', function () {
+    track.scrollBy({ left: -step(), behavior: 'smooth' });
+  });
+  document.getElementById('carNext').addEventListener('click', function () {
+    track.scrollBy({ left: step(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', function () {
+    window.requestAnimationFrame(updateDots);
+  });
+})();
+</script>
 
 </body>
 </html>
