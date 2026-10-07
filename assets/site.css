@@ -541,17 +541,29 @@ h3 { font-size: clamp(21px, 2.6vw, 23px); font-weight: 500; line-height: 1.25; l
 
 .plan-name { font-size: 17px; font-weight: 600; }
 
-.plan-price {
-  margin-top: 16px;
+/* Free build is the headline; the monthly charge sits underneath, smaller */
+.plan-zero {
+  margin-top: 14px;
   font-family: var(--display);
-  font-size: clamp(48px, 9vw, 58px);
+  font-size: clamp(42px, 8vw, 52px);
+  font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--copper-deep);
 }
 
-.plan-price small { font-family: var(--body); font-size: 18px; color: var(--ink-faint); letter-spacing: 0; }
+.plan-price {
+  margin-top: 12px;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
 
-.plan-zero { margin-top: 12px; font-size: 15px; font-weight: 600; color: var(--pine); }
+.plan-price small,
+.plan-then { font-family: var(--body); font-size: 16px; font-weight: 400; color: var(--ink-faint); letter-spacing: 0; }
 
 .plan-sub { font-size: 15px; color: var(--ink-faint); }
 
