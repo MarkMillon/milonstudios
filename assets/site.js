@@ -60,7 +60,7 @@ var BRAND = {
         toggle.focus();
       }
     });
-    window.matchMedia('(min-width: 960px)').addEventListener('change', function (mq) {
+    window.matchMedia('(min-width: 768px)').addEventListener('change', function (mq) {
       if (mq.matches) setOpen(false);
     });
   }

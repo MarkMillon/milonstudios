@@ -167,7 +167,7 @@ a { color: inherit; }
 .site-nav .btn { margin-top: 28px; width: 100%; }
 
 .site-nav::after {
-  content: '$0 to build · One monthly plan';
+  content: 'Free build · One monthly plan';
   margin-top: auto;
   padding-top: 28px;
   font-size: 15px;
@@ -182,7 +182,7 @@ html.nav-locked, html.nav-locked body { overflow: hidden; }
   .site-nav, .nav-overlay { transition: none; }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
   .nav-toggle, .nav-overlay { display: none; }
   .site-nav {
     display: flex;
@@ -210,6 +210,15 @@ html.nav-locked, html.nav-locked body { overflow: hidden; }
   .site-nav a.nav-link:hover,
   .site-nav a.nav-link[aria-current="page"] { color: var(--copper-deep); border-bottom-color: var(--copper); }
   .site-nav .btn { margin-top: 0; width: auto; padding: 12px 20px; font-size: 16px; }
+}
+
+/* Tablets / narrow laptop windows: compact top nav so everything fits on one row */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .wm-tagline { display: none; }
+  .site-nav { gap: 18px; }
+  .site-nav a.nav-link[href="/"] { display: none; } /* the wordmark already links home */
+  .site-nav a.nav-link { font-size: 15px; }
+  .site-nav .btn { padding: 10px 14px; font-size: 15px; }
 }
 
 /* ---------- Buttons ---------- */
