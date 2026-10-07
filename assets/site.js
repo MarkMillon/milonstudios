@@ -27,47 +27,6 @@ var BRAND = {
     el.textContent = new Date().getFullYear();
   });
 
-  // Work carousel: controls show only when there's more than one slide
-  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
-    var track = carousel.querySelector('[data-carousel-track]');
-    var slides = track.children;
-    var controls = carousel.querySelector('[data-carousel-controls]');
-    var prev = carousel.querySelector('[data-carousel-prev]');
-    var next = carousel.querySelector('[data-carousel-next]');
-    var count = carousel.querySelector('[data-carousel-count]');
-
-    if (slides.length < 2) {
-      controls.hidden = true;
-      return;
-    }
-    carousel.classList.add('is-multi');
-
-    var step = function () {
-      return slides[0].offsetWidth + (parseFloat(getComputedStyle(track).columnGap) || 0);
-    };
-    var current = function () {
-      // At the far end the last slide can't scroll fully to the start, so treat "scrolled to the end" as last
-      if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) return slides.length - 1;
-      return Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / step())));
-    };
-    var update = function () {
-      var i = current();
-      count.textContent = (i + 1) + ' / ' + slides.length;
-      prev.disabled = i === 0;
-      next.disabled = i === slides.length - 1;
-    };
-    var go = function (dir) {
-      var i = Math.max(0, Math.min(slides.length - 1, current() + dir));
-      track.scrollTo({ left: i * step(), behavior: 'smooth' });
-      window.setTimeout(update, 500); // fallback in case no scroll event arrives
-    };
-
-    prev.addEventListener('click', function () { go(-1); });
-    next.addEventListener('click', function () { go(1); });
-    track.addEventListener('scroll', update, { passive: true });
-    update();
-  });
-
   // Mobile sidebar
   var header = document.querySelector('.site-header');
   var toggle = document.querySelector('.nav-toggle');
