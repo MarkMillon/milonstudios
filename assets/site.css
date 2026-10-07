@@ -837,3 +837,60 @@ body.sent .form-wrap { padding-top: 64px; }
 .choice input:focus-visible + span { outline: 2px solid var(--copper); outline-offset: 2px; }
 
 .hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* ---------- Contact: check out now ---------- */
+.checkout-now { margin-top: 28px; text-align: center; }
+
+.checkout-toggle {
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink-soft);
+  background: none;
+  border: 0;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+
+.checkout-toggle span {
+  font-weight: 600;
+  color: var(--copper-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.checkout-toggle:hover span { color: var(--ink); }
+
+.checkout-list {
+  margin-top: 20px;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 24px 20px 8px;
+}
+
+.co-intro { font-size: 16px; color: var(--ink-soft); margin-bottom: 8px; }
+
+.co-group { padding: 16px 0 8px; border-top: 1px solid var(--rule); }
+.co-group:first-of-type { border-top: 0; }
+.co-group h3 { font-size: 20px; margin-bottom: 4px; }
+
+.co-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.co-row + .co-row { border-top: 1px solid var(--rule); }
+
+.co-name { display: block; font-weight: 600; }
+.co-meta { display: block; font-size: 15px; color: var(--ink-faint); }
+
+.co-btn { flex: none; padding: 10px 16px; font-size: 15px; }
+
+@media (min-width: 640px) { .checkout-list { padding: 28px 32px 12px; } }
+
+body.sent .checkout-now { display: none; }

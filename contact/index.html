@@ -147,6 +147,57 @@
         <p class="form-note">Free build, one monthly plan, no obligation. Your details are used only to respond to your request.</p>
       </form>
 
+      <div class="checkout-now">
+        <button type="button" class="checkout-toggle" aria-expanded="false" aria-controls="checkout-list">Already know what you need? <span>Or check out now</span></button>
+        <div class="checkout-list" id="checkout-list" hidden>
+          <p class="co-intro">Every plan starts with a free build. You'll be taken to Stripe's secure checkout, and we'll reach out after to start your build.</p>
+          <div class="co-group">
+            <h3>Custom Apps</h3>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">Yearly plan</span><span class="co-meta">Free build, then $300/mo · 12-month term</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/14A9ATamb2e30FQe4obMQ00" data-plan="apps-yearly" rel="noopener">Check out</a>
+            </div>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">Monthly</span><span class="co-meta">Free build, then $500/mo · 12-month term</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/6oU8wP51R4mbbku0dybMQ01" data-plan="apps-monthly" rel="noopener">Check out</a>
+            </div>
+          </div>
+          <div class="co-group">
+            <h3>Websites</h3>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">Starter</span><span class="co-meta">Free build, then $99/mo · 12-month term</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/8x25kDeCr5qfagqe4obMQ02" data-plan="web-starter" rel="noopener">Check out</a>
+            </div>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">Business</span><span class="co-meta">Free build, then $149/mo · 12-month term</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/fZu00jcujcSHcoy8K4bMQ03" data-plan="web-business" rel="noopener">Check out</a>
+            </div>
+          </div>
+          <div class="co-group">
+            <h3>AI Workflow Automations</h3>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">First workflow</span><span class="co-meta">Free build, then $199/mo · Monthly</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/9B68wP3XN5qf2NYaScbMQ04" data-plan="auto-first" rel="noopener">Check out</a>
+            </div>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">Each additional workflow</span><span class="co-meta">Free build, then +$99/mo · Monthly</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/fZu9AT0LB5qffAKf8sbMQ05" data-plan="auto-additional" rel="noopener">Check out</a>
+            </div>
+          </div>
+          <div class="co-group">
+            <h3>AI Receptionist</h3>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">300 minutes</span><span class="co-meta">Free setup, then $99/mo · Monthly, $0.25/min overage</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/6oU6oHgKzf0P74e5xSbMQ06" data-plan="recep-300" rel="noopener">Check out</a>
+            </div>
+            <div class="co-row">
+              <div class="co-plan"><span class="co-name">750 minutes</span><span class="co-meta">Free setup, then $149/mo · Monthly, $0.25/min overage</span></div>
+              <a class="btn btn-ghost co-btn" href="https://buy.stripe.com/9B6dR92TJ19Z0FQf8sbMQ07" data-plan="recep-750" rel="noopener">Check out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="thanks">
         <h2>Thank you, we've got it</h2>
         <p>We'll review what you sent and be in touch soon.</p>
@@ -161,6 +212,16 @@
   if (new URLSearchParams(window.location.search).get('sent') === '1') {
     document.body.classList.add('sent');
   }
+  (function () {
+    var toggle = document.querySelector('.checkout-toggle');
+    var list = document.getElementById('checkout-list');
+    toggle.addEventListener('click', function () {
+      var open = list.hidden;
+      list.hidden = !open;
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  })();
   </script>
 </main>
 
