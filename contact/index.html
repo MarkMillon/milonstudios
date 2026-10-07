@@ -46,60 +46,104 @@
 <main>
   <section class="page-hero">
     <div class="container-narrow rise">
-      <h1>Get a free tech audit</h1>
-      <p class="lede">Tell us a little about your business. We'll find the problem costing you the most time and show you how we would solve it, with a free build and one monthly plan.</p>
+      <h1>Tell us what your business needs</h1>
+      <p class="lede">Share the basics about your business and what's taking up your time. We'll reply directly with a free tech audit and the best next step.</p>
     </div>
   </section>
 
   <section class="form-wrap">
     <div class="container-narrow">
       <form class="audit-form" action="https://formsubmit.co/hi@milonstudio.com" method="POST">
-        <input type="hidden" name="_subject" value="New free tech audit request: milonstudios.com">
+        <input type="hidden" name="_subject" value="New intake form: milonstudios.com">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://milonstudios.com/contact/?sent=1">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <div class="field-row">
-          <div class="field">
-            <label for="f-name">Your name</label>
-            <input type="text" id="f-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="f-biz">Business name</label>
-            <input type="text" id="f-biz" name="business_name" autocomplete="organization" required>
-          </div>
-        </div>
+        <fieldset class="form-step">
+          <legend><span class="form-step-num">01</span>Contact</legend>
 
-        <div class="field-row">
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-biz">Business name</label>
+              <input type="text" id="f-biz" name="business_name" autocomplete="organization" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-site">Current website <span class="opt">(optional)</span></label>
+              <input type="text" id="f-site" name="website" autocomplete="url" inputmode="url" placeholder="yourbusiness.com">
+            </div>
+            <div class="field">
+              <label for="f-type">Type of business</label>
+              <div class="select-wrap">
+                <select id="f-type" name="business_type" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option>Restaurant</option>
+                  <option>Salon / Barbershop / Spa</option>
+                  <option>Contractor (Plumbing, HVAC, Electrical)</option>
+                  <option>Gym &amp; Fitness Studio</option>
+                  <option>Auto Repair Shop</option>
+                  <option>Dental &amp; Medical Clinic</option>
+                  <option>Retail &amp; Boutique</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-step">
+          <legend><span class="form-step-num">02</span>Your needs</legend>
+
           <div class="field">
-            <label for="f-type">Business type</label>
+            <span class="field-label" id="interest-label">What are you interested in? <span class="opt">(select all that apply)</span></span>
+            <div class="choice-grid" role="group" aria-labelledby="interest-label">
+              <label class="choice"><input type="checkbox" name="interested_in" value="Custom App"><span>Custom App</span></label>
+              <label class="choice"><input type="checkbox" name="interested_in" value="Website"><span>Website</span></label>
+              <label class="choice"><input type="checkbox" name="interested_in" value="AI Workflow Automation"><span>AI Workflow Automation</span></label>
+              <label class="choice"><input type="checkbox" name="interested_in" value="AI Receptionist"><span>AI Receptionist</span></label>
+              <label class="choice"><input type="checkbox" name="interested_in" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-budget">Approximate monthly budget <span class="opt">(optional)</span></label>
             <div class="select-wrap">
-              <select id="f-type" name="business_type" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>Restaurant</option>
-                <option>Salon / Barbershop / Spa</option>
-                <option>Contractor (Plumbing, HVAC, Electrical)</option>
-                <option>Gym &amp; Fitness Studio</option>
-                <option>Auto Repair Shop</option>
-                <option>Dental &amp; Medical Clinic</option>
-                <option>Retail &amp; Boutique</option>
-                <option>Other</option>
+              <select id="f-budget" name="monthly_budget">
+                <option value="" selected>Not sure</option>
+                <option>Under $150/mo</option>
+                <option>$150 to $300/mo</option>
+                <option>$300 to $500/mo</option>
+                <option>$500+/mo</option>
               </select>
             </div>
           </div>
-          <div class="field">
-            <label for="f-phone">Phone</label>
-            <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required>
-          </div>
-        </div>
 
-        <div class="field">
-          <label for="f-waste">What's your biggest time-waster?</label>
-          <textarea id="f-waste" name="biggest_time_waster" placeholder="For example: we miss calls during the lunch rush, or we track appointments on paper." required></textarea>
-        </div>
+          <div class="field">
+            <label for="f-waste">What's your biggest time-waster?</label>
+            <textarea id="f-waste" name="biggest_time_waster" placeholder="For example: we miss calls during the lunch rush, or we track appointments on paper." required></textarea>
+          </div>
+        </fieldset>
 
         <button type="submit" class="btn">Get a free tech audit</button>
-        <p class="form-note">No cost and no obligation. We'll be in touch to talk through what we find.</p>
+        <p class="form-note">Free build, one monthly plan, no obligation. Your details are used only to respond to your request.</p>
       </form>
 
       <div class="thanks">
