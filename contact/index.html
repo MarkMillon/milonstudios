@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Free Tech Audit — Milon Studios</title>
+<meta name="description" content="Tell us your biggest time-waster. We will find the hassle costing you the most time and show you how we would fix it.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C97B3D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..600,0..100,0..1;1,9..144,300..600,0..100,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="wordmark" aria-label="Home">
+      <span class="wm-name" data-brand-name>Milon Studios</span>
+      <span class="wm-tagline" data-brand-tagline>Tech Partners for Local Business</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/services/">Services</a>
+      <a class="nav-link" href="/pricing/">Pricing</a>
+      <a class="nav-link" href="/#how-it-works">How It Works</a>
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-link" href="/contact/" aria-current="page">Contact</a>
+      <a class="btn" href="/contact/">Get a free tech audit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container-narrow rise">
+      <span class="eyebrow">Free tech audit</span>
+      <h1>What's your biggest <em>time-waster?</em></h1>
+      <p class="lede">Tell us a little about your business. We'll find the one hassle costing you the most time and show you how we'd fix it — $0 to build, one monthly plan.</p>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <div class="container-narrow">
+      <form class="audit-form" action="https://formsubmit.co/hi@milonstudio.com" method="POST">
+        <input type="hidden" name="_subject" value="New free tech audit request — milonstudios.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://milonstudios.com/contact/?sent=1">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-biz">Business name</label>
+            <input type="text" id="f-biz" name="business_name" autocomplete="organization" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-type">Business type</label>
+            <div class="select-wrap">
+              <select id="f-type" name="business_type" required>
+                <option value="" selected disabled>Choose one</option>
+                <option>Restaurant</option>
+                <option>Salon / Barbershop / Spa</option>
+                <option>Contractor (Plumbing, HVAC, Electrical)</option>
+                <option>Gym &amp; Fitness Studio</option>
+                <option>Auto Repair Shop</option>
+                <option>Dental &amp; Medical Clinic</option>
+                <option>Retail &amp; Boutique</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-waste">What's your biggest time-waster?</label>
+          <textarea id="f-waste" name="biggest_time_waster" placeholder="e.g. We miss calls during the lunch rush, or we track appointments on paper." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-arrow">Get a free tech audit</button>
+        <p class="form-note">No cost, no obligation. We'll reach out to talk through what we found.</p>
+      </form>
+
+      <div class="thanks">
+        <div class="mark" aria-hidden="true">✓</div>
+        <h2>Got it — thank you.</h2>
+        <p>We'll look over what you sent and reach out soon.</p>
+        <a href="/" class="text-link">Back to home →</a>
+      </div>
+
+      <!-- CONTACT DETAILS PLACEHOLDER — add phone number here once finalized. -->
+    </div>
+  </section>
+
+  <script>
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    document.body.classList.add('sent');
+  }
+  </script>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="wm-name" data-brand-name>Milon Studios</span>
+      <p data-brand-tagline>Tech Partners for Local Business</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Get a free tech audit</a></li>
+      <li><a href="/privacy/">Privacy policies</a></li>
+    </ul>
+    <div class="footer-meta">
+      <span>© <span data-year>2026</span> <span data-brand-name>Milon Studios</span></span>
+      <span><a href="mailto:hi@milonstudio.com">hi@milonstudio.com</a> · 111 John Street, New York, NY 10038</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
