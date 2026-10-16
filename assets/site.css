@@ -625,6 +625,166 @@ h3 { font-size: clamp(21px, 2.6vw, 23px); font-weight: 500; line-height: 1.25; l
 @media (min-width: 720px) { .value-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; } }
 @media (min-width: 1040px) { .value-grid { grid-template-columns: repeat(4, 1fr); } }
 
+/* ---------- Privacy ---------- */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--ink-faint);
+}
+
+.crumbs li + li::before { content: '/'; margin-right: 8px; color: var(--rule-strong); }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--copper-deep); }
+
+.policy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.policy-meta li {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink-soft);
+}
+
+.policy-grid { display: grid; gap: 16px; }
+
+.policy-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.policy-card:hover { border-color: var(--rule-strong); box-shadow: 0 12px 32px rgba(31, 27, 22, 0.07); }
+
+.policy-card .app-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.policy-card h3 { margin-bottom: 8px; }
+.policy-card p { color: var(--ink-soft); font-size: 17px; flex: 1; }
+.policy-card .offer-foot { align-items: center; }
+.policy-card .platform { font-size: 15px; color: var(--ink-faint); }
+.policy-card:hover .offer-more { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Wider screens: each app becomes one row (icon, name and summary, link) */
+@media (min-width: 720px) {
+  .policy-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 28px;
+    padding: 28px 32px;
+  }
+  .policy-card .app-icon { grid-row: span 2; margin-bottom: 0; width: 64px; height: 64px; font-size: 28px; border-radius: 14px; }
+  .policy-card h3 { margin-bottom: 4px; align-self: end; }
+  .policy-card p { align-self: start; max-width: 52ch; }
+  .policy-card .offer-foot {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    margin: 0;
+    padding: 0 0 0 28px;
+    border-top: 0;
+    border-left: 1px solid var(--rule);
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
+.policy-note { margin-top: 40px; font-size: 16px; color: var(--ink-soft); }
+.policy-note a { color: var(--copper-deep); font-weight: 600; text-underline-offset: 4px; }
+
+.policy-layout { display: grid; gap: 40px; align-items: start; }
+
+.summary { margin-bottom: 48px; }
+.summary .checklist { margin-top: 4px; }
+.summary .checklist li { font-weight: 500; }
+.summary p { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 17px; }
+
+.toc { display: none; }
+
+.policy { counter-reset: clause; }
+
+.policy h2 {
+  counter-increment: clause;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-size: clamp(24px, 3.4vw, 30px);
+  margin: 0 0 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.policy h2::before {
+  content: counter(clause, decimal-leading-zero);
+  flex: none;
+  font-size: 15px;
+  letter-spacing: 0;
+  color: var(--copper-deep);
+}
+
+.policy section + section { margin-top: 40px; }
+.policy p, .policy li { color: var(--ink-soft); font-size: 18px; }
+.policy p + p, .policy p + ul, .policy ul + p { margin-top: 16px; }
+.policy strong { color: var(--ink); font-weight: 600; }
+.policy ul { padding-left: 22px; display: grid; gap: 10px; }
+.policy li::marker { color: var(--copper); }
+.policy a { color: var(--copper-deep); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.policy a:hover { color: var(--ink); }
+
+.policy-contact { margin-top: 48px; }
+.policy-contact h3 { margin-bottom: 8px; }
+.policy-contact p { color: var(--ink-soft); font-size: 17px; }
+.policy-contact .btn { margin-top: 20px; }
+
+@media (min-width: 960px) {
+  .policy-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 72px; }
+  .toc { display: block; position: sticky; top: 112px; }
+  .toc-label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  .toc ol { list-style: none; border-left: 1px solid var(--rule); }
+  .toc a {
+    display: block;
+    margin-left: -1px;
+    padding: 7px 0 7px 16px;
+    border-left: 1px solid transparent;
+    font-size: 15px;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .toc a:hover { color: var(--copper-deep); border-left-color: var(--copper); }
+  .policy-body { max-width: 720px; }
+}
+
 /* ---------- CTA band ---------- */
 .cta-band {
   background: var(--ink);
